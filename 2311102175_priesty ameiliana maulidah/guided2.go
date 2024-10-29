@@ -1,0 +1,15 @@
+package main
+import "fmt"
+
+func penjumlahan (n int) int { //5
+	if n == 1{
+		return 1
+	}else {
+		return n + penjumlahan(n-1) //
+	}
+}
+func main() {
+	var n int 
+	fmt.Scan(&n)
+	fmt.Println(penjumlahan(n))
+}
