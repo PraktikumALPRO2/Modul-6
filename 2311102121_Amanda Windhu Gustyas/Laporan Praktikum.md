@@ -40,6 +40,29 @@ Catatan:<br/>
 4. Recursive-case adalah kondisi dimana proses pemanggilan dirinya sendiri dilakukan. Kondisi recursive-case adalah komplemen atau negasi dari base-case.
 5. Setiap algoritma rekursif selalu memiliki padanan dalam bentuk algoritma iteratif.
 
+### Komponen Rekursif
+Algoritma rekursif terdiri dari dua komponen utama:
+1. Bae-case (Basis), yaitu bagian untuk menghentikan proses rekursif dan menjadi komponen terpenting di dalam sebuah rekursif.
+2. Recursive-case, yaitu bagian pemanggilan subprogramnya
+
+### Contoh Program dengan menggunakan Rekursif
+1. Membuat baris bilangan dari n hingga 1
+   Base-case: bilangan == 1<br/>
+   ![image](https://github.com/user-attachments/assets/e0b66fdd-e2d6-4973-ab56-7010e254c8f5)
+2. Menghitung hasil penjumlahan 1 hingga n
+   Base-case: n == 1
+   ![image](https://github.com/user-attachments/assets/5f1520b0-8a51-41d2-ab85-67e5d54735e7)
+3. Mencari dua pangkat n atau 2^n
+   Base-case: n == 0
+   ![image](https://github.com/user-attachments/assets/8dd3cd40-a81c-4525-ab45-a94c359cad46)
+4. Mencari nilai faktorial atau n!
+   Base-case: n == 0 atau n == 1
+   ![image](https://github.com/user-attachments/assets/ced93f94-7bff-46f3-837b-47a501be16de)
+
+
+
+
+
 
 
 
