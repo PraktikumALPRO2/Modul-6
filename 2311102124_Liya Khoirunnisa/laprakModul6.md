@@ -3,7 +3,7 @@
 
 <br>
 
-<h2 align="center"><strong>MODUL IV</strong></h2>
+<h2 align="center"><strong>MODUL VI</strong></h2>
 <h2 align="center"><strong> PROSEDUR </strong></h2>
 
 <br>
@@ -18,7 +18,7 @@
 
 <p align="center">
   <strong>Disusun Oleh:</strong><br>
-  Aditya Sulistiawan / 2311102193<br>
+  Liya Khoirunnisa / 2311102124<br>
   S1 IF 11 05
 </p>
 
