@@ -587,7 +587,7 @@ func main() {
 ![Screenshot 2024-10-29 195329](https://github.com/user-attachments/assets/711fef96-a9c2-4f94-ab67-e30fdaff3c50)
 
 ### Full code Screenshot:
-![Screenshot 2024-10-29 195329](https://github.com/user-attachments/assets/711fef96-a9c2-4f94-ab67-e30fdaff3c50)
+![Screenshot 2024-10-31 144714](https://github.com/user-attachments/assets/5abcc8bc-d04a-42a5-ab2b-69ae1caeb80a)
 
 ### Deskripsi Program : 
 Program ini menggunakan rekursi untuk mencetak semua bilangan ganjil dari angka 1 hingga batas akhir yang ditentukan oleh pengguna.
