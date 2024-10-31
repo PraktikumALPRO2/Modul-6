@@ -110,10 +110,10 @@ func baris(bilangan int){
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/c8d7e245-e344-4fbc-b764-27ee7b193561)
+![Screenshot 2024-10-28 210740](https://github.com/user-attachments/assets/44b30c0e-9830-4f3b-8988-36a5821430d7)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/06c7a9db-52e9-4e1d-ac3e-af1c289f4ea4)
+![Screenshot 2024-10-28 210857](https://github.com/user-attachments/assets/8ae6f0d5-37ad-4763-b76c-7a26526435d7)
 
 ### Deskripsi Program : 
 Program tersebut adalah program sederhana yang meminta pengguna untuk memasukkan sebuah bilangan bulat positif n. Program kemudian mencetak angka dari n hingga 1 secara menurun menggunakan teknik rekursif.
@@ -158,10 +158,10 @@ func penjumlahan(n int) int {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/d410b78c-d828-41ed-b77a-76b7e86aa1e7)
+![Screenshot 2024-10-28 211927](https://github.com/user-attachments/assets/014d717b-99f1-4be9-9928-d10f0d1fd3d8)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/3575add8-383a-4f79-b449-4a4afdcbeb49)
+![Screenshot 2024-10-28 212007](https://github.com/user-attachments/assets/eb7eaa10-e257-4a05-af32-ba9667fb4ef7)
 
 ### Deskripsi Program : 
 Program tersebut adalah program sederhana yang dibuat untuk menerima input berupa bilangan bulat positif n dari pengguna. Selanjutnya, program ini menghitung jumlah semua bilangan dari 1 hingga n dengan menggunakan fungsi rekursif, kemudian menampilkan hasil penjumlahannya.
@@ -209,10 +209,10 @@ func main(){
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/0b08eea3-7b7f-46a2-a0fb-7bda8770ae9e)
+![Screenshot 2024-10-28 213222](https://github.com/user-attachments/assets/44a18588-7201-40d5-938d-b693b59d6b33)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/09ef70b8-906c-4bea-8f50-e7f2c0decf85)
+![Screenshot 2024-10-28 213301](https://github.com/user-attachments/assets/aceed035-94e2-462b-9590-65cd1db5c89d)
 
 ### Deskripsi Program : 
 Program tersebut dibuat untuk menghitung nilai `2^n`, di mana `n` merupakan bilangan bulat non-negatif yang dimasukkan oleh pengguna. Program ini memanfaatkan fungsi rekursif untuk melakukan perhitungan dan menampilkan hasilnya.
@@ -258,10 +258,10 @@ func main(){
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/07309b78-40a0-4077-9702-b9377290a13c)
+![Screenshot 2024-10-28 214445](https://github.com/user-attachments/assets/e6622cf8-1eec-49a3-b1dd-376a3e9bf957)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/2460eb6a-2af9-4abc-bf48-2568b08691f2)
+![Screenshot 2024-10-28 214519](https://github.com/user-attachments/assets/ed5b729e-90c8-4989-abb6-223cd94693e4)
 
 ### Deskripsi Program : 
 Program tersebut adalah program sederhana untuk menghitung faktorial dari bilangan bulat non-negatif n yang dimasukkan oleh pengguna. Dengan menggunakan fungsi rekursif, program ini melakukan perhitungan dan menampilkan hasilnya.
@@ -288,7 +288,7 @@ Program tersebut adalah program sederhana untuk menghitung faktorial dari bilang
 ### 1. Buatlah program yang mengimplementasikan fungsi rekursif pada deret fibonacci 
 **Deret fibonacci adalah sebuah deret dengan nilai suku ke-0 dan ke-1 adalah 0 dan 1, dan nilal suku ke-n selanjutnya adalah hasil penjumlahan dua suku sebelumnya. Secara umum dapat diformulasikan S₁ =Sn-1 + Sn-2. Berikut ini adalah contoh nilai deret fibonacci hingga suku ke-10.**
 
-![image](https://github.com/user-attachments/assets/953dcc77-a9b8-44a5-a744-4ff372445ec6)
+![Screenshot 2024-10-31 135729](https://github.com/user-attachments/assets/6f1bf39c-81b5-4142-b20f-67597a737f63)
 
 
 ### Source Code :
@@ -327,10 +327,10 @@ func main() {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/ede6ede3-c09f-48db-b0b3-3fcc17759430)
+![Screenshot 2024-10-28 215633](https://github.com/user-attachments/assets/f2119486-2a1b-4823-ba7f-c283ec07a51e)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/c40816d8-f8cb-4522-8c47-451334a34214)
+![Screenshot 2024-10-28 215713](https://github.com/user-attachments/assets/c14c0cd3-03dd-4908-86e8-4b45de41707a)
 
 ### Deskripsi Program : 
 Program tersebut adalah program sederhana yang digunakan untuk menghitung dan menampilkan suku-suku dalam deret Fibonacci. Pengguna diminta untuk memasukkan jumlah suku yang diinginkan, dan program ini menggunakan fungsi rekursif untuk menghitung setiap suku dalam deret tersebut.
@@ -391,10 +391,10 @@ func main() {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/e1d41c69-c970-4fe9-bf8b-456e5736c02d)
+![Screenshot 2024-10-28 220824](https://github.com/user-attachments/assets/ecdd4c3d-eced-497f-8700-600c94096234)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/5e2346b9-45d1-4eac-a627-5e7df39e40d3)
+![Screenshot 2024-10-28 220859](https://github.com/user-attachments/assets/6a562f5a-2460-4569-b349-b99bbf797cef)
 
 ### Deskripsi Program : 
 Program tersebut adalah program sederhana untuk mencetak pola bintang berdasarkan jumlah baris yang diinputkan oleh pengguna. Menggunakan metode rekursif, program mencetak bintang di setiap baris dengan jumlah yang meningkat sesuai dengan nomor baris.
@@ -421,7 +421,8 @@ Program tersebut adalah program sederhana untuk mencetak pola bintang berdasarka
 
 **Keluaran terdiri dari barisan bilangan yang menjadi faktor dari N.**
 
-![image](https://github.com/user-attachments/assets/3cf13328-e401-47ad-a97c-e87910db2caa)
+![Screenshot 2024-10-31 140054](https://github.com/user-attachments/assets/ad20f53d-ffbb-4c04-af06-1e486b613445)
+
 
 ### Source Code :
 ```go
@@ -456,10 +457,10 @@ func main() {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/acaa23ba-547e-4770-9c3b-9a7c081f88d1)
+![Screenshot 2024-10-29 184147](https://github.com/user-attachments/assets/1848cd95-9254-46f4-92b6-f45e269283f3)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/d80a145e-f57c-4110-b59a-ca4f9e13b006)
+![Screenshot 2024-10-29 184247](https://github.com/user-attachments/assets/4c028061-e1e2-4198-a9e3-bf693a64c9f2)
 
 ### Deskripsi Program : 
 Program ini menggunakan fungsi rekursif untuk mencari semua faktor dari sebuah bilangan bulat positif yang dimasukkan oleh pengguna. Faktor-faktor tersebut kemudian dikumpulkan dalam sebuah daftar dan ditampilkan di akhir program.
@@ -481,7 +482,8 @@ Program ini menggunakan fungsi rekursif untuk mencari semua faktor dari sebuah b
 
 
 ### 4.
-![image](https://github.com/user-attachments/assets/0bdf47df-bdbe-418b-82d6-2c2c34390846)
+
+![Screenshot 2024-10-31 140209](https://github.com/user-attachments/assets/7d2dc88e-5855-41e0-95ab-c9bd6a78337f)
 
 ### Source Code :
 ```go
@@ -518,10 +520,10 @@ func main() {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/f928ad42-49a9-485d-a891-59264671aa6f)
+![Screenshot 2024-10-29 185946](https://github.com/user-attachments/assets/81fda3ff-f09a-4a89-a9c2-58d85859d6ad)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/14584243-0b2e-405c-87a1-b819fe86710c)
+![Screenshot 2024-10-29 190021](https://github.com/user-attachments/assets/586c062d-8733-409b-8b99-3d9ddbb4b12c)
 
 ### Deskripsi Program : 
 Program tersebut dibuat untuk mencetak deret angka menurun mulai dari bilangan positif yang diinputkan pengguna hingga 1, lalu mencetak angka kembali naik hingga mencapai bilangan awal. Pola ini dibentuk dengan menggunakan fungsi rekursif.
@@ -582,10 +584,10 @@ func main() {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/84ff0409-d9be-499d-9862-7fe64a2355ac)
+![Screenshot 2024-10-29 195329](https://github.com/user-attachments/assets/711fef96-a9c2-4f94-ab67-e30fdaff3c50)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/4de183de-19a5-4865-9dcb-ed78e926e15d)
+![Screenshot 2024-10-29 195329](https://github.com/user-attachments/assets/711fef96-a9c2-4f94-ab67-e30fdaff3c50)
 
 ### Deskripsi Program : 
 Program ini menggunakan rekursi untuk mencetak semua bilangan ganjil dari angka 1 hingga batas akhir yang ditentukan oleh pengguna.
@@ -643,10 +645,10 @@ func main() {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/4f27212e-f016-4d20-96c7-cf9ec9cbe369)
+![Screenshot 2024-10-29 201446](https://github.com/user-attachments/assets/fc9002fc-c186-4bbc-adf3-d8795db8733d)
 
 ### Full code Screenshot:
-![image](https://github.com/user-attachments/assets/2fe18193-70b3-4cce-937d-515b7a70de67)
+![Screenshot 2024-10-29 201603](https://github.com/user-attachments/assets/21d12f3c-9f89-455e-aca7-064ed38bc966)
 
 ### Deskripsi Program : 
 Program tersebut menerima dua masukan dari pengguna, yaitu bilangan dasar dan pangkatnya, lalu menghitung hasil perpangkatan bilangan tersebut secara rekursif.
