@@ -63,7 +63,8 @@ Komponen rekursif biasanya mencakup hal-hal berikut:
 
 
 ## Guided
-### 1. Membuat baris bilangan dari n hingga 1. Base-case: bilangan == 1
+### 1. Membuat baris bilangan dari n hingga 1. 
+Base-case: bilangan == 1
 ```go
 package main
 import "fmt"
@@ -94,7 +95,8 @@ func baris(bilangan int){
 ### Cara Kerja Program:
 
 
-### 2. Menghitung hasil penjumlahan 1 hingga n. Base-case: n == 1
+### 2. Menghitung hasil penjumlahan 1 hingga n.
+Base-case: n == 1
 ```go
 package main
 import "fmt"
@@ -124,7 +126,8 @@ func main(){
 ### Cara Kerja Program:
 
 
-### 3. Mencari dua pangkat n atau 2^n. Base-case: n == 0
+### 3. Mencari dua pangkat n atau 2^n. 
+Base-case: n == 0
 ```go
 package main
 import "fmt"
@@ -155,7 +158,8 @@ func main() {
 ### Cara Kerja Program:
 
 
-### 4. Mencari nilai faktorial atau n!. Base-case: n == 0 atau n == 1 
+### 4. Mencari nilai faktorial atau n!. 
+Base-case: n == 0 atau n == 1 
 ```go
 package main
 import "fmt"
