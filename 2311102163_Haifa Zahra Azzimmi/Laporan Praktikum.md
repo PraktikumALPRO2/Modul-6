@@ -185,11 +185,24 @@ func main() {
 Program ini meminta pengguna memasukkan nilai n, kemudian menggunakan fungsi rekursif pangkat untuk menghitung hasil dari 2 pangkat n. Hasilnya kemudian dicetak ke layar. Simpel dan efisien.
 
 ### Algoritma Program:
-
-
+1. Mulai
+2. Minta pengguna memasukkan nilai n.
+3. Baca input n.
+4. Panggil fungsi pangkat dengan parameter n.
+5. Dalam fungsi pangkat:
+   - Jika n sama dengan 0, kembalikan nilai 1.
+   - Jika n lebih besar dari 0, kembalikan 2 dikali hasil dari pangkat(n-1).
+6. Cetak hasil dari 2 pangkat n.
+7. Selesai
 
 ### Cara Kerja Program:
-
+1. Meminta pengguna memasukkan nilai n.
+2. Input n dibaca dan disimpan.
+3. Program memanggil fungsi rekursif pangkat dengan n sebagai argumen.
+4. Dalam fungsi pangkat:
+   - Jika n sama dengan 0, kembalikan nilai 1 (basis kasus).
+   - Jika n lebih besar dari 0, kembalikan nilai 2 dikali hasil dari pemanggilan fungsi pangkat(n-1) (rekursi).
+5. Hasil dari perhitungan 2 pangkat n dicetak ke layar.
 
 ### 4. Mencari nilai faktorial atau n!. 
 Base-case: n == 0 atau n == 1 
@@ -216,7 +229,24 @@ func main () {
 ![image](https://github.com/user-attachments/assets/5a318a81-d4bd-40f4-a47f-e544df9a3af6)
 
 ### Deskripsi Program:
+Program ini meminta pengguna memasukkan angka n, lalu menggunakan fungsi rekursif faktorial untuk menghitung nilai faktorial dari n dan mencetak hasilnya.
 
 ### Algoritma Program:
-
+1. Mulai
+2. Minta pengguna memasukkan angka n.
+3. Baca input n.
+4. Panggil fungsi faktorial dengan parameter n.
+5. Dalam fungsi faktorial:
+   - Jika n sama dengan 0 atau 1, kembalikan nilai 1.
+   - Jika n lebih besar dari 1, kembalikan nilai n dikali hasil dari faktorial(n-1).
+6. Cetak hasil faktorial dari n.
+7. Selesai
+   
 ### Cara Kerja Program:
+1. Program dimulai dengan meminta pengguna memasukkan angka n.
+2. Input n dibaca dan disimpan.
+3. Program memanggil fungsi rekursif faktorial dengan n sebagai argumen.
+4. Dalam fungsi faktorial:
+   - Jika n adalah 0 atau 1, kembalikan nilai 1 sebagai hasil faktorial.
+   - Jika n lebih besar dari 1, fungsi memanggil dirinya sendiri dengan argumen n-1 dan mengalikan hasilnya dengan n.
+5. Hasil faktorial dari n dicetak ke layar.
