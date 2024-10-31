@@ -134,12 +134,28 @@ func main(){
 #### Output Program
 ![image](https://github.com/user-attachments/assets/bfb1119c-6785-4342-8116-ec4c62f9e418)
 
-### Deskripsi Program
+### Deskripsi Program:
+Program ini meminta pengguna memasukkan angka n, kemudian menggunakan fungsi rekursif penjumlahan untuk menghitung dan mencetak penjumlahan semua angka dari 1 hingga n.
 
 ### Algoritma Program:
+1. Mulai
+2. Minta pengguna memasukkan angka n.
+3. Baca input n.
+4. Panggil fungsi penjumlahan dengan parameter n.
+5. Dalam fungsi penjumlahan:
+   - Jika n sama dengan 1, kembalikan nilai 1.
+   - Jika n lebih besar dari 1, kembalikan nilai n ditambah hasil dari penjumlahan(n-1).
+6. Cetak hasil penjumlahan dari 1 hingga n.
+7. Selesai
 
 ### Cara Kerja Program:
-
+1. Meminta pengguna memasukkan sebuah angka n.
+2. Input n dibaca dan disimpan.
+3. Program memanggil fungsi penjumlahan dengan n sebagai argumen.
+4. Fungsi penjumlahan bekerja secara rekursif:
+   - Jika n adalah 1, kembalikan nilai 1.
+   - Jika n lebih besar dari 1, kembalikan nilai n ditambah hasil dari penjumlahan(n-1).
+5. Hasil penjumlahan dari 1 hingga n dicetak ke layar.
 
 ### 3. Mencari dua pangkat n atau 2^n. 
 Base-case: n == 0
@@ -165,9 +181,11 @@ func main() {
 #### Output Program
 ![image](https://github.com/user-attachments/assets/7e406702-92a2-4884-b1c3-b4ea704a16b1)
 
-### Deskripsi Program
+### Deskripsi Program:
+Program ini meminta pengguna memasukkan nilai n, kemudian menggunakan fungsi rekursif pangkat untuk menghitung hasil dari 2 pangkat n. Hasilnya kemudian dicetak ke layar. Simpel dan efisien.
 
 ### Algoritma Program:
+
 
 
 ### Cara Kerja Program:
