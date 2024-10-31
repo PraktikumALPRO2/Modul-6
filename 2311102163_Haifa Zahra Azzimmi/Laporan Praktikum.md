@@ -88,12 +88,27 @@ func baris(bilangan int){
 ![image](https://github.com/user-attachments/assets/7308d33e-d64d-407e-b992-9fe9c7d6fade)
 
 ### Deskripsi Program:
-
+Program ini meminta pengguna memasukkan sebuah angka, kemudian menggunakan fungsi rekursif untuk mencetak angka dari angka tersebut hingga angka 1 secara menurun
 
 ### Algoritma Program:
-
+1. Mulai
+2. Minta pengguna memasukkan sebuah angka n.
+3. Baca input n.
+4. Panggil prosedur baris dengan parameter n.
+5. Dalam prosedur baris:
+   - Jika n sama dengan 1, cetak 1.
+   - Jika n lebih besar dari 1, cetak nilai n dan panggil kembali prosedur baris dengan parameter n-1.
+6. Selesai
+   
 ### Cara Kerja Program:
-
+1. Program dimulai dan meminta pengguna memasukkan sebuah angka n.
+2. Input n dibaca dan disimpan dalam variabel n.
+3. Program memanggil fungsi baris dengan argumen n.
+4. Fungsi baris bekerja secara rekursif dengan langkah-langkah berikut:
+   - Jika bilangan adalah 1, maka angka 1 dicetak dan fungsi berhenti.
+   - Jika bilangan lebih besar dari 1, nilai bilangan dicetak dan fungsi memanggil dirinya sendiri dengan bilangan - 1.
+5. Proses rekursif ini terus berlanjut hingga nilai bilangan mencapai 1.
+6. Program selesai setelah mencetak semua angka dari n hingga 1.
 
 ### 2. Menghitung hasil penjumlahan 1 hingga n.
 Base-case: n == 1
