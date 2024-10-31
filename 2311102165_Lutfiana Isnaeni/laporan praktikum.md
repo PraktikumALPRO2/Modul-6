@@ -255,6 +255,79 @@ Program ini menghitung nilai faktorial dari angka bulat n yang diinput oleh peng
 4.	Kemudian, program menampilkan hasil perhitungan faktorial dari nilai n.
 
 
+## Unguided
+### 1.Buatlah program yang mengimplementasikan fungsi rekursif pada deret fibonacci 
+Deret fibonacci adalah sebuah deret dengan nilai suku ke-0 dan ke-1 adalah 0 dan 1, dan nilal suku ke-n selanjutnya adalah hasil penjumlahan dua suku sebelumnya. Secara umum dapat diformulasikan S₁ =Sn-1 + Sn-2. Berikut ini adalah contoh nilai deret fibonacci hingga suku ke-10. 
+![image](https://github.com/user-attachments/assets/096ae557-95b8-46d4-8dd4-a0f8e95dcde2)
 
+```go
+#### Output Program
+
+### Deskripsi Program
+
+
+### Algoritma Program :
+
+### Cara Kerja Program : 
+
+### 2. 
+
+```go
+
+#### Output Program
+
+### Deskripsi Program
+
+### Algoritma Program :
+
+### Cara Kerja Program : 
+
+### 3. 
+
+```go
+
+#### Output Program
+
+### Deskripsi Program
+
+### Algoritma Program :
+
+### Cara Kerja Program : 
+
+### 4. 
+
+```go
+
+#### Output Program
+
+### Deskripsi Program
+
+### Algoritma Program :
+
+### Cara Kerja Program : 
+
+### 5. 
+
+go```
+
+#### Output Program
+
+### Deskripsi Program
+
+### Algoritma Program :
+
+### Cara Kerja Program : 
+
+### 6. 
+
+go```
+
+#### Output Program
+
+### Deskripsi Program
+
+### Algoritma Program :
+
+### Cara Kerja Program : 
 
 
