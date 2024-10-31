@@ -265,4 +265,76 @@ Program ini menghitung faktorial dari sebuah bilangan bulat non-negatif n menggu
 4. Hasil: Setelah semua pemanggilan selesai, program menampilkan hasil faktorial.
 
 ## Unguided
-### 1. 
+### 1. Buatlah program yang mengimplementasikan fungsi rekursif pada deret fibonacci 
+Deret fibonacci adalah sebuah deret dengan nilai suku ke-0 dan ke-1 adalah 0 dan 1, dan nilal suku ke-n selanjutnya adalah hasil penjumlahan dua suku sebelumnya. Secara umum dapat diformulasikan S₁ =Sn-1 + Sn-2. Berikut ini adalah contoh nilai deret fibonacci hingga suku ke-10.
+![image](https://github.com/user-attachments/assets/4263acff-dfcb-46bd-b7dc-a80c25e7bbb2)
+#### Source code :
+```go
+
+```
+#### Deskripsi program
+#### Algoritma program :
+#### Cara kerja program :
+
+### 2. Buatlah sebuah program yang digunakan untuk menampilkan pola bintang dengan menggunakan fungsi rekursif. N adalah masukan dari user
+#### Source code :
+```go
+
+```
+#### Deskripsi program
+#### Algoritma program :
+#### Cara kerja program :
+
+### 3. Buatlah program yang mengimplementasikan rekursif untuk menampilkan faktor bilangan dari suatu N, atau bilangan yang apa saja yang habis membagi N.
+Masukan terdiri dari sebuah bilangan bulat positif N.
+
+Keluaran terdiri dari barisan bilangan yang menjadi faktor dari N.
+
+![image](https://github.com/user-attachments/assets/6f75059e-002d-4b32-9900-589175b9f579)
+#### Source code :
+```go
+
+```
+#### Deskripsi program
+#### Algoritma program :
+#### Cara kerja program :
+
+### 4. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu
+Masukan terdiri dari sebuah bilangan positif N
+
+Keluaran terdiri dari barisan bilangan dari N hingga 1 dan kembali ke N
+![image](https://github.com/user-attachments/assets/a088d67a-43d7-4002-8aa1-3ec9d0bf7763)
+#### Source code :
+```go
+
+```
+#### Deskripsi program
+#### Algoritma program :
+#### Cara kerja program :
+
+### 5. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.
+Masukan terdiri dari sebuah bilangan bulat positif N.
+
+Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.
+![image](https://github.com/user-attachments/assets/c47df5f9-c85e-4bed-94cc-8645ac695dcb)
+#### Source code :
+```go
+
+```
+#### Deskripsi program
+#### Algoritma program :
+#### Cara kerja program :
+
+### 6. Buatlah program yang mengimplementasikan rekursif untuk mencari hasil pangkat dari dua buah bilangan.
+Masukan terdiri dari bilangan bulat x dan y.
+
+Keluaran terdiri dari hasil x dipangkatkan y.
+
+Catatan: diperbolehkan menggunakan asterik "*", tapi dilarang menggunakan Import "math".
+#### Source code :
+```go
+
+```
+#### Deskripsi program
+#### Algoritma program :
+#### Cara kerja program :
