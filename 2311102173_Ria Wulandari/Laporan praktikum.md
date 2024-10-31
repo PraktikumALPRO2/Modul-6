@@ -97,6 +97,8 @@ Penjelasan :
 
 ## Guided
 ### 1. Membuat baris bilangan dari n hingga 1
+Base-case: bilangan == 1
+#### Source code :
 ```go
 package main
 import "fmt"
@@ -114,4 +116,153 @@ func baris(bilangan int){
 	}
 }
 ```
-#### Deskripsi
+#### Deskripsi program
+Program ini menggunakan rekursi untuk mencetak deret angka dari nilai input hingga angka 1 secara menurun. Program ini meminta input dari pengguna, yaitu bilangan bulat n, dan kemudian mencetak angka mulai dari n hingga 1. Fungsi `baris()` dipanggil secara rekursif untuk menampilkan setiap angka hingga mencapai nilai 1.
+#### Algoritma program :
+1. Program meminta input dari pengguna berupa bilangan bulat.
+
+2. Fungsi `baris()` dipanggil dengan parameter input tersebut.
+
+3. Di dalam fungsi `baris()`, program akan mencetak angka yang dikirim sebagai parameter, kemudian memanggil dirinya sendiri dengan nilai parameter yang dikurangi 1.
+
+4. Proses rekursif berlanjut sampai nilai parameter mencapai 1, di mana angka 1 dicetak dan rekursi berhenti.
+#### Cara kerja program :
+1. Minta Input: Program meminta pengguna memasukkan sebuah angka, misalnya 5.
+
+2. Cetak Angka: Program memanggil fungsi `baris()`, yang pertama-tama mencetak angka 5.
+
+3. Rekursi: Fungsi `baris()` kemudian memanggil dirinya sendiri dengan angka yang lebih kecil, yaitu 4, lalu 3, 2, dan akhirnya 1.
+
+4. Selesai: Ketika angka 1 sudah dicetak, program berhenti.
+### 2. Menghitung hasil penjumlahan 1 hingga n
+Base-case: n = 1
+#### Source code :
+```go
+package main
+import "fmt"
+
+func penjumlahan(n int)int{
+	if n == 1{
+		return 1
+	}else{
+		return n + penjumlahan(n-1)
+	}
+}
+func main(){
+	var n int
+	fmt.Scan(&n)
+	fmt.Println(penjumlahan(n))
+}
+```
+#### Deskripsi program
+Program ini menghitung penjumlahan dari semua bilangan bulat dari 1 hingga nilai input n menggunakan rekursi. Program meminta input dari pengguna, yaitu bilangan bulat n, dan kemudian memanggil fungsi `penjumlahan()` untuk menghitung hasil penjumlahan rekursif dari 1 hingga n.
+#### Algoritma program :
+1. Program meminta input dari pengguna berupa bilangan bulat n.
+
+2. Fungsi `penjumlahan()` dipanggil dengan parameter n, yang menghitung penjumlahan semua bilangan dari 1 hingga n secara rekursif.
+
+3. Fungsi `penjumlahan()` memiliki dua kasus:
+- Base case: Jika n=1, fungsi akan mengembalikan 1.
+- Recursive case: Jika n>1, ungsi akan memanggil dirinya sendiri dengan parameter n-1, dan menambahkan nilai n pada hasil penjumlahan rekursif dari n-1.
+
+4. Hasil penjumlahan ditampilkan menggunakan `fmt.Println()`.
+#### Cara kerja program :
+1. Minta Input: Program meminta pengguna memasukkan sebuah angka, misalnya 5.
+
+2. Rekursi: Program menghitung penjumlahan dari 1 hingga angka tersebut dengan memanggil fungsi `penjumlahan()`.
+
+3. Proses Rekursi: Fungsi menambahkan angka yang dimasukkan dengan hasil dari fungsi yang dipanggil lagi dengan angka lebih kecil, hingga mencapai 1.
+
+4. Cetak Hasil: Ketika sampai di angka 1, program menjumlahkan semua angka dan mencetak hasilnya.
+### 3. Mencari dua pangkat n atau 2^n
+Base-case: n == 0
+#### Source code :
+```go
+package main
+
+import "fmt"
+
+//Fungsi rekrusif untuk menghitung 2^n
+func pangkat(n int) int{
+	if n == 0{
+		return 1
+	}else{
+		return 2*pangkat(n-1)
+	}
+}
+
+func main(){
+	var n int
+	fmt.Print("Masukkan nilai n: ")
+	fmt.Scan(&n)
+	fmt.Println("Hasil dari 2 pangkat", n, "adalah: ", pangkat(n))
+}
+```
+#### Deskripsi program
+Program ini menghitung nilai 2^n (dua pangkat n) menggunakan fungsi rekursif. Program akan meminta input bilangan bulat nari pengguna, kemudian memanggil fungsi rekursif `pangkat()` untuk menghitung hasil dari 2^n.
+#### Algoritma program :
+1. Program meminta pengguna untuk memasukkan bilangan bulat n.
+
+2. Fungsi `pangkat()` dipanggil dengan parameter n untuk menghitung hasil dari 2^n.
+
+3. Di dalam fungsi `pangkat()`, ada dua kasus:
+- Base case: Jika n=0, program mengembalikan nilai 1, karena 2^0=1.
+- Recursive case: jika n>0, program memanggil fungsi `pangkat()` dengan n−1, dan mengalikan hasilnya dengan 2.
+
+4. Hasil dari 2^n dicetak sebagai output.
+#### Cara kerja program :
+1. Input Pengguna: Program meminta pengguna memasukkan angka, seperti 3.
+
+2. Hitung 2^n: Program menggunakan fungsi `pangkat(n)` untuk menghitung 2^n
+
+3. Logika Fungsi:
+- Jika n adalah 0, fungsi mengembalikan 1.
+- Jika n lebih besar dari 0, fungsi memanggil dirinya sendiri dengan n−1 dan mengalikan hasilnya dengan 2.
+
+4. Hasil: Setelah menghitung, program menampilkan hasilnya.
+### 4. Mencari nilai faktorial atau n!
+Base-case: n == 0 atau n == 1
+```go
+package main
+
+import "fmt"
+
+var n int
+func faktorial(n int) int{
+	if n == 0 || n == 1{
+		return 1
+	}else{
+		return n * faktorial(n-1)
+	}
+}
+
+func main(){
+	fmt.Scan(&n)
+	fmt.Println(faktorial(n))
+}
+```
+#### Deskripsi program
+Program ini menghitung faktorial dari sebuah bilangan bulat non-negatif n menggunakan fungsi rekursif. Faktorial dari n, dilambangkan dengan n!, adalah hasil kali semua bilangan bulat positif dari 1 hingga n. Program meminta input dari pengguna dan menampilkan hasil faktorial dari angka tersebut.
+#### Algoritma program :
+1. Program meminta pengguna untuk memasukkan bilangan bulat non-negatif n.
+
+2. Fungsi `faktorial()` dipanggil dengan parameter n untuk menghitung hasil faktorial.
+
+3. Di dalam fungsi `faktorial()`, terdapat dua kasus:
+- Base case: Jika n=0 atau n=1,fungsi akan mengembalikan nilai 1.
+- Recursive case: Jika n>1, fungsi akan memanggil dirinya sendiri dengan parameter n−1 dan mengalikan hasilnya dengan n.
+
+4. Hasil dari faktorial ditampilkan sebagai output.
+#### Cara kerja program :
+1. Input Pengguna: Program meminta pengguna untuk memasukkan angka, misalnya 5.
+
+2. Hitung Faktorial: Program memanggil fungsi faktorial(n) untuk menghitung faktorial dari angka yang dimasukkan.
+
+3. Logika Fungsi:
+- Jika n adalah 0 atau 1, fungsi mengembalikan 1.
+- Jika n lebih besar dari 1, fungsi memanggil dirinya sendiri dengan n−1 dan mengalikan hasilnya dengan n.
+
+4. Hasil: Setelah semua pemanggilan selesai, program menampilkan hasil faktorial.
+
+## Unguided
+### 1. 
