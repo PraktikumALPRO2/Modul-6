@@ -292,3 +292,83 @@ Algoritma dari program tersebut sebagai berikut :
 5. Tampilkan hasil faktorial dengan fungsi 'faktorial(n)'.
 
 Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial' digunakan untuk menghitung faktorial dari bilangan secara rekursif. Fungsi akan memanggil dengan nilai n yang berkurang hingga 0 atau 1. Setiap panggilan akan mengalikan n dengan hasil faktorial dari n-1.
+
+
+# <strong> Unguided </strong>
+## Unguided - 1
+### Study Case
+**Deret fibonacci adalah sebuah deret dengan nilai suku ke-O dan ke-1 adalah O dan 1, dan nilai suku ke-n selanjutnya adalah hasil penjumlahan dua suku sebelumnya. Secara umum dapat diformulasikan S=Sn-1+Sn-2 Berikut ini adalah contoh nilai deret fibonacci hingga suku ke-10. Buatlah program yang mengimplementasikan fungsi rekursif pada deret fibonассі tersebut.**
+
+#### Source Code
+```go
+
+```
+### Screenshot Code
+
+
+### Deskripsi Program
+
+## Unguided - 2
+### Study Case
+**Buatlah sebuah program yang digunakan untuk menampilkan pola bintang berikut ini dengan menggunakan fungsi rekursif. N adalah masukan dari user.**
+
+#### Source Code
+```go
+
+```
+### Screenshot Code
+
+
+### Deskripsi Program
+
+## Unguided - 3
+### Study Case
+****
+
+#### Source Code
+```go
+
+```
+### Screenshot Code
+
+
+### Deskripsi Program
+
+## Unguided - 4
+### Study Case
+****
+
+#### Source Code
+```go
+
+```
+### Screenshot Code
+
+
+### Deskripsi Program
+
+## Unguided - 5
+### Study Case
+****
+
+#### Source Code
+```go
+
+```
+### Screenshot Code
+
+
+### Deskripsi Program
+
+## Unguided - 6
+### Study Case
+****
+
+#### Source Code
+```go
+
+```
+### Screenshot Code
+
+
+### Deskripsi Program
