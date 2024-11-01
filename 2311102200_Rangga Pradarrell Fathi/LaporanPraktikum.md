@@ -323,7 +323,9 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 ## Unguided - 3
 ### Study Case
-****
+**Buatlah program yang mengimplementasikan rekursif untuk menampilkan faktor bilangan dari suatu N, atau bilangan yang apa saja yang habis membagi N.**                                        
+*Masukan terdiri dari sebuah bilangan bulat positif N.*                                                        
+*Keluaran terdiri dari barisan bilangan yang menjadi faktor dari N (terurut dari 1 hingga N ya).*
 
 #### Source Code
 ```go
@@ -336,7 +338,9 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 ## Unguided - 4
 ### Study Case
-****
+**4. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu.**                             
+*Masukan terdiri dari sebuah bilangan bulat positif N.*                                                                 
+*Keluaran terdiri dari barisan bilangan dari N hingga 1 dan kembali ke N.*
 
 #### Source Code
 ```go
@@ -362,7 +366,9 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 ## Unguided - 6
 ### Study Case
-****
+** Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.**                                 
+*Masukan terdiri dari sebuah bilangan bulat positif N.*                                        
+*Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.*
 
 #### Source Code
 ```go
