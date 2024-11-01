@@ -261,20 +261,56 @@ Program ini meminta pengguna memasukkan angka n, lalu menggunakan fungsi rekursi
 
 ### Source Code :
 ```go
+package main
+
+import (
+	"fmt"
+)
+
+// Fungsi rekursif untuk menghitung deret Fibonacci
+func fibonacci(n int) int {
+	if n <= 1 {
+		return n
+	}
+	return fibonacci(n-1) + fibonacci(n-2)
+}
+
+func main() {
+	fmt.Println("n\tSn")
+	// Cetak tabel deret Fibonacci hingga suku ke-10
+	for i := 0; i <= 10; i++ {
+		fmt.Printf("%d\t%d\n", i, fibonacci(i))
+	}
+}
 
 ```
 
 ### Output:
-
-### Full code Screenshot:
-
+![image](https://github.com/user-attachments/assets/c25403e8-2c4c-4acf-9182-43fc39e8b2b6)
 
 ### Deskripsi Program : 
+Program ini menghitung dan mencetak deret Fibonacci hingga suku ke-10 menggunakan fungsi rekursif dan loop for. Setiap suku adalah jumlah dari dua suku sebelumnya, dimulai dari 0 dan 1.
 
 ### Algoritma Program
-
+1. Mulai
+2. Cetak "n" dan "Sn" sebagai header tabel
+3. Untuk i dari 0 hingga 10:
+   - Panggil fungsi fibonacci(i)
+   - Cetak nilai i dan hasil dari fibonacci(i)
+4. Fungsi fibonacci:
+   - Jika n <= 1 maka kembalikan n
+   - Jika tidak, kembalikan hasil dari fibonacci(n-1) + fibonacci(n-2)
+5. Selesai
+   
 ### Cara Kerja Program:
-
+1. Program mulai dan mencetak header tabel "n" dan "Sn".
+2. Loop for menjalankan perulangan dari i = 0 hingga i = 10.
+3. Untuk setiap nilai i, program memanggil fungsi fibonacci(i) untuk menghitung nilai Fibonacci ke-i.
+4. Fungsi fibonacci bekerja secara rekursif:
+   - Jika n <= 1, fungsi mengembalikan nilai n.
+   - Jika n > 1, fungsi mengembalikan jumlah dari fibonacci(n-1) dan fibonacci(n-2).
+5. Program mencetak nilai i dan hasil dari fungsi fibonacci(i).
+6. Proses ini berlanjut sampai semua nilai dari i = 0 hingga i = 10 dihitung dan dicetak.
 
 ### 2. Buatlah sebuah program yang digunakan untuk menampilkan pola bintang dengan menggunakan fungsi rekursif. N adalah masukan dari user
 
