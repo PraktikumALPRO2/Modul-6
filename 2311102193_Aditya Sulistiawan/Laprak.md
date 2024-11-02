@@ -116,9 +116,6 @@ Rekursif merupakan konsep pemrograman di mana sebuah fungsi memanggil dirinya se
 
 ### Source Code
 ```go
-//Rangga Pradarrell Fathi
-//2311102200
-//IF-11-05
 package main
 
 import "fmt"
@@ -141,7 +138,10 @@ func main() {
 ```
 
 ### Screenshot Output
-![Guided 1](https://github.com/user-attachments/assets/acfc97ef-0450-4912-bfa9-3f5c7ab7defb)
+![Gui1](https://github.com/user-attachments/assets/afd70a56-635e-4160-b37f-60484bd7fdf9)
+
+### SS CODE
+![SC](https://github.com/user-attachments/assets/039a019f-23cf-4f77-ad59-0dd1544e4c17)
 
 
 ### Deskripsi Program
