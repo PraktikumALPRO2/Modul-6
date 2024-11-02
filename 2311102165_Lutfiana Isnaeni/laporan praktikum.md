@@ -47,6 +47,38 @@
 3. [Unguided](#unguided)
 
 ## Dasar Teori
+### 1. Pengertian Rekursif:
+Rekursi adalah teknik penyelesaian masalah di mana sebuah fungsi akan memanggil dirinya sendiri untuk menyelesaikan sub-masalah yang lebih kecil dari masalah utama. Dalam pemrograman, rekursi memungkinkan pemecahan masalah kompleks dengan cara memecahnya menjadi bagian-bagian lebih sederhana, menghasilkan solusi yang lebih efisien dan ringkas.
+### 2. Struktur Dasar Fungsi Rekursif: Sebuah fungsi rekursif biasanya memiliki dua komponen utama:
+
+•	Basis Kasus (Base Case): Kondisi yang digunakan untuk menghentikan pemanggilan berulang fungsi. Basis kasus sangat penting, karena tanpanya, 			fungsi akan terus berlanjut tanpa henti dan menyebabkan kesalahan memori (stack overflow).
+ 
+•	Pemanggilan Rekursif (Recursive Call): Bagian fungsi yang memanggil dirinya sendiri dengan argumen yang berbeda (biasanya nilai yang lebih kecil 		atau sederhana) hingga kondisi basis kasus tercapai.
+ ### 3. Contoh Fungsi Rekursif:
+•	Contoh yang umum digunakan untuk menggambarkan rekursi adalah perhitungan faktorial. Misalnya, faktorial dari n, yang ditulis sebagai n!, dapat 	dihitung dengan cara berikut:
+ ```go
+ package main
+
+import "fmt"
+
+// Fungsi rekursif untuk menghitung faktorial
+func fact(n int) int {
+    if n == 0 {
+        return 1
+    }
+    return n * fact(n - 1)
+}
+
+func main() {
+    fmt.Println("Faktorial dari 5 adalah:", fact(5))
+}
+```
+### 4. Kelebihan dan Kekurangan Rekursif:
+•	Kelebihan: Rekursi dapat menyederhanakan kode, terutama dalam menyelesaikan masalah yang bisa dipecah menjadi sub-masalah yang serupa, seperti 			dalam pemrosesan pohon, graf, dan berbagai perhitungan matematis.
+
+•	Kekurangan: Rekursi biasanya membutuhkan lebih banyak memori dan waktu eksekusi dibandingkan dengan metode iterasi karena adanya pemanggilan 			fungsi berulang.
+
+
 
 
 
@@ -678,7 +710,8 @@ func main() {
 }
 ```
 #### Output Program
-![image](https://github.com/user-attachments/assets/44a55ad0-41b8-4c58-9ccc-1afd06a9a9c3)
+![image](https://github.com/user-attachments/assets/d74a7f94-a432-44b4-967a-36a635464e5f)
+
 
 ### Deskripsi Program
 Program di atas digunakan untuk menghitung nilai x pangkat y menggunakan metode rekursif. Pengguna diminta untuk memasukkan dua angka, yaitu x sebagai basis dan y sebagai eksponen. Program akan menghitung hasil dari x pangkat y melalui fungsi rekursi dan menampilkan hasilnya. Contoh, jika x = 2x dan y = 3y, maka hasilnya adalah 2^3 = 8.
@@ -709,7 +742,7 @@ Program di atas digunakan untuk menghitung nilai x pangkat y menggunakan metode 
 
 	•	Jika y lebih besar dari 0, fungsi mengalikan x dengan hasil pemanggilan `power(x, y-1)`, sehingga nilai y berkurang 1 setiap kali hingga mencapai 		0.
 
-5.	Hasil dari fungsi power() disimpan dalam variabel `result`.
+5.	Hasil dari fungsi `power()` disimpan dalam variabel `result`.
     
 6.	Program mencetak hasil dalam format yang sesuai.
 
