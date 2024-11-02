@@ -140,7 +140,8 @@ func main() {
 }
 ```
 
-### Screenshot Code
+### Screenshot Output
+![Guided 1](https://github.com/user-attachments/assets/acfc97ef-0450-4912-bfa9-3f5c7ab7defb)
 
 
 ### Deskripsi Program
@@ -186,7 +187,8 @@ func main() {
 	
 }
 ```
-### Screenshot Code
+### Screenshot Output
+![Guided 2](https://github.com/user-attachments/assets/321c6b05-275a-494a-8298-2936347cd4d1)
 
 
 ### Deskripsi Program
@@ -233,7 +235,8 @@ func main () {
 
 }
 ```
-### Screenshot Code
+### Screenshot Output
+![Guided 3](https://github.com/user-attachments/assets/34ce676b-b011-44e7-9538-35b3bd624113)
 
 
 ### Deskripsi Program
@@ -278,7 +281,8 @@ func main () {
 	fmt.Println(faktorial(n))
 }
 ```
-### Screenshot Code
+### Screenshot Output
+![Guided 4](https://github.com/user-attachments/assets/98761df1-a1f8-42c7-be9b-cff2eed13b84)
 
 
 ### Deskripsi Program
