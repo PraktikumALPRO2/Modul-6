@@ -256,7 +256,7 @@ func main() {
 
 Program ini mencetak faktor-faktor dari suatu bilangan bulat positif yang dimasukkan oleh pengguna. Fungsi rekursif(n) menggunakan perulangan for untuk memeriksa setiap bilangan dari 1 hingga n. Jika n habis dibagi oleh i (artinya n % i == 0), maka i adalah faktor dari n dan dicetak. Di fungsi main, program meminta pengguna memasukkan nilai a, lalu memanggil rekursif(a) untuk mencetak semua faktor dari nilai tersebut.
 
-### 4. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu.<br/> Masukan terdiri dari sebuah bilangan bulat positif N. Keluaran terdiri dari barisan bilangan dari N hingga 1 dan kembali ke N.
+### 4. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu.<br/> Masukan terdiri dari sebuah bilangan bulat positif N.<br/>Keluaran terdiri dari barisan bilangan dari N hingga 1 dan kembali ke N.
 
 ```go
 package main
@@ -287,7 +287,7 @@ func main() {
 
 Program ini mencetak urutan angka dengan pola menurun dan menaik menggunakan rekursi. Fungsi cetakUrutan bertugas mencetak angka dari nilai input jumlah hingga 1, kemudian kembali naik ke nilai jumlah, membentuk pola simetris. Jika jumlah bernilai 1, fungsi langsung mencetak 1 dan berhenti sebagai kasus dasar (base case). Jika jumlah lebih dari 1, fungsi mencetak angka tersebut, lalu memanggil dirinya sendiri dengan nilai jumlah - 1, dan setelah selesai, mencetak kembali angka tersebut untuk pola cermin. Di fungsi main, program meminta input dari pengguna berupa angka jumlah yang menentukan batas urutan. Setelah itu, fungsi cetakUrutan dipanggil untuk mencetak urutan angka menurun dan menaik sesuai input, sehingga terbentuk pola simetris yang dimulai dari angka input, turun ke 1, dan kembali naik ke angka input.
 
-### 5. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.<br/> Masukan terdiri dari sebuah bilangan bulat positif N. Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.
+### 5. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.<br/> Masukan terdiri dari sebuah bilangan bulat positif N.<br/>Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.
 
 ```go
 package main
