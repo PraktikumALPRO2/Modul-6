@@ -158,7 +158,165 @@ func main (){
 
 Kode di atas untuk menghitung nilai faktorial dari bilangan n yang diberikan oleh pengguna, menggunakan metode rekursif. Program dimulai dengan mengimpor paket fmt untuk fungsi input dan output. Pada bagian awal, terdapat variabel n yang dideklarasikan secara global. Fungsi utama (main) bertugas untuk membaca input pengguna yang dimasukkan melalui fmt.Scan(&n). Selanjutnya, fungsi faktorial dipanggil untuk menghitung faktorial dari n. Fungsi faktorial memiliki kondisi dasar yang memeriksa apakah n bernilai 0 atau 1, karena faktorial dari 0 dan 1 adalah 1. Jika n lebih besar dari 1, fungsi ini akan mengalikan n dengan hasil pemanggilan faktorial(n-1), sehingga proses rekursif akan berlanjut hingga mencapai kondisi dasar. Setelah selesai, hasil faktorial ditampilkan sebagai output.
 
+## III. UNGUIDED
 
+### 1. Deret Fibonacci adalah sebuah deret dengan nilai suku ke-0 dan ke-1 adalah 0 dan 1, dan nilai suku ke-n selanjutnya adalah hasil penjumlahan dua suku sebelumnya. Secara umum dapat diformulasikan Sn = Sn-1 + Sn-2. Berikut ini adalah contoh nilai deret Fibonacci hingga suku ke-10. Buatlah program yang mengimplementasikan fungsi rekursif pada deret Fibonacci tersebut.<br/>
+![image](https://github.com/user-attachments/assets/ae90637e-9f70-43a6-bdca-2440363043a7)
+
+```go
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func fibonacci(n int) int {
+	if n <= 1 {
+		return n
+	} else {
+		return fibonacci(n-1) + fibonacci(n-2)
+	}
+}
+
+func main() {
+	var inp int
+	var bilke, fibo string
+	fmt.Scan(&inp)
+	for i := 1; i <= inp; i++ {
+		bilke += "\t" + strconv.Itoa(i)
+		fibo += "\t" + strconv.Itoa(fibonacci(i))
+	}
+	fmt.Printf("n: %s \nSn: %s \n", bilke, fibo)
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/f824e2c3-ea91-41c4-b275-1b03bf5ad04c)
+
+Kode di atas untuk menghitung dan menampilkan deret bilangan Fibonacci hingga suku ke-n, menggunakan metode rekursif. Program dimulai dengan mengimpor paket fmt untuk input/output dan strconv untuk mengonversi bilangan bulat menjadi string. Fungsi fibonacci digunakan untuk menghitung nilai Fibonacci dari suku n tertentu, dengan kondisi dasar bahwa jika n bernilai 0 atau 1, fungsi mengembalikan nilai n itu sendiri. Jika n lebih besar dari 1, fungsi mengembalikan hasil penjumlahan dari fibonacci(n-1) + fibonacci(n-2), yang secara rekursif menghasilkan nilai Fibonacci yang diinginkan.
+
+### 2. Buatlah sebuah program yang digunakan untuk menampilkan pola bintang berikut ini dengan menggunakan fungsi rekursif. N adalah masukan dari user.
+
+```go
+package main
+
+import "fmt"
+
+func cetakBintang(n int) {
+	if n == 0 {
+		return
+	}
+	fmt.Print("*")
+	cetakBintang(n - 1)
+}
+
+func cetakPola(n, current int) {
+	if current > n {
+		return
+	}
+	cetakBintang(current)
+	fmt.Println()
+	cetakPola(n, current+1)
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan nilai n: ")
+	fmt.Scan(&n)
+
+	fmt.Println("Pola bintang:")
+	cetakPola(n, 1)
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/02a9bd38-1f80-4977-a86d-e1d62c9a4f19)
+
+Program ini mencetak pola segitiga bintang menggunakan fungsi rekursif. Terdapat dua fungsi utama: cetakBintang dan cetakPola. Fungsi cetakBintang(n) mencetak n bintang dalam satu baris menggunakan rekursi. Fungsi cetakPola(n, current) mencetak pola segitiga dengan memanggil cetakBintang(current) untuk setiap baris, kemudian melanjutkan ke baris berikutnya hingga mencapai n baris. Di fungsi main, program meminta pengguna memasukkan nilai n (jumlah baris), lalu mencetak pola bintang yang bertambah setiap baris hingga mencapai n bintang.
+
+### 3. Buatlah program yang mengimplementasikan rekursif untuk menampilkan faktor bilangan dari suatu N, atau bilangan yang apa saja yang habis membagi N.<br/> Masukan terdiri dari sebuah bilangan bulat positif N. <br/> Keluaran terdiri dari barisan bilangan yang menjadi faktor dari N (terurut dari 1 hingga N ya).
+
+```go
+package main
+
+import "fmt"
+
+func rekursif(n int) {
+	for i := 1; i <= n; i++ {
+		if n%i == 0 {
+			fmt.Print(i, " ")
+		}
+	}
+}
+
+func main() {
+	var a int
+	fmt.Scan(&a)
+	rekursif(a)
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/4f823272-bdfe-4ab5-ae18-771496b3b62f)
+
+Program ini mencetak faktor-faktor dari suatu bilangan bulat positif yang dimasukkan oleh pengguna. Fungsi rekursif(n) menggunakan perulangan for untuk memeriksa setiap bilangan dari 1 hingga n. Jika n habis dibagi oleh i (artinya n % i == 0), maka i adalah faktor dari n dan dicetak. Di fungsi main, program meminta pengguna memasukkan nilai a, lalu memanggil rekursif(a) untuk mencetak semua faktor dari nilai tersebut.
+
+### 4. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu.<br/> Masukan terdiri dari sebuah bilangan bulat positif N. Keluaran terdiri dari barisan bilangan dari N hingga 1 dan kembali ke N.
+
+```go
+package main
+
+import "fmt"
+
+func cetakUrutan(jumlah int) {
+	if jumlah == 1 {
+		fmt.Print(jumlah, " ")
+		return
+	}
+	fmt.Print(jumlah, " ")
+	cetakUrutan(jumlah - 1)
+	fmt.Print(jumlah, " ")
+}
+
+func main() {
+	var jumlah int
+	fmt.Print("Masukkan jumlah bilangan: ")
+	fmt.Scanln(&jumlah)
+
+	fmt.Print("Keluaran : ")
+	cetakUrutan(jumlah)
+	fmt.Println()
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/d0e6f9b2-54ef-4f41-a7cd-e1a92f91ee31)
+
+Program ini mencetak urutan angka dengan pola menurun dan menaik menggunakan rekursi. Fungsi cetakUrutan bertugas mencetak angka dari nilai input jumlah hingga 1, kemudian kembali naik ke nilai jumlah, membentuk pola simetris. Jika jumlah bernilai 1, fungsi langsung mencetak 1 dan berhenti sebagai kasus dasar (base case). Jika jumlah lebih dari 1, fungsi mencetak angka tersebut, lalu memanggil dirinya sendiri dengan nilai jumlah - 1, dan setelah selesai, mencetak kembali angka tersebut untuk pola cermin. Di fungsi main, program meminta input dari pengguna berupa angka jumlah yang menentukan batas urutan. Setelah itu, fungsi cetakUrutan dipanggil untuk mencetak urutan angka menurun dan menaik sesuai input, sehingga terbentuk pola simetris yang dimulai dari angka input, turun ke 1, dan kembali naik ke angka input.
+
+### 5. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.<br/> Masukan terdiri dari sebuah bilangan bulat positif N. Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.
+
+```go
+package main
+
+import "fmt"
+
+func cetakBilanganGanjil(n int) {
+	if n < 1 {
+		return
+	}
+	cetakBilanganGanjil(n - 2)
+	if n%2 != 0 {
+		fmt.Print(n, " ")
+	}
+}
+
+func main() {
+	var N int
+	fmt.Print("Masukkan nilai N: ")
+	fmt.Scanln(&N)
+
+	fmt.Print("Keluaran : ")
+	cetakBilanganGanjil(N)
+	fmt.Println()
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/70684f2f-40f1-4e43-b6b1-5ef1ec895373)
+
+Program ini mencetak bilangan ganjil dari 1 hingga nilai maksimum N yang diberikan oleh pengguna, menggunakan fungsi rekursif. Fungsi cetakBilanganGanjil menerima parameter n dan akan berhenti jika n kurang dari 1 (basis rekursi), karena tidak ada bilangan ganjil yang dapat dicetak. Jika n lebih besar dari atau sama dengan 1, fungsi ini pertama-tama memanggil dirinya sendiri dengan nilai n - 2, sehingga rekursi berjalan dari nilai terkecil hingga mencapai nilai n. Setelah kembali dari setiap pemanggilan rekursif, fungsi memeriksa apakah n ganjil (n % 2 != 0). Jika ya, maka nilai n dicetak, sehingga hasil akhirnya adalah urutan bilangan ganjil dari 1 hingga N secara berurutan. Di bagian main, program meminta input N dari pengguna, lalu memanggil cetakBilanganGanjil(N) untuk mencetak semua bilangan ganjil hingga batas N.
 
 
 
