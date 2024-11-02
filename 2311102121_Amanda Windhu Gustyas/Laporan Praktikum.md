@@ -59,6 +59,114 @@ Algoritma rekursif terdiri dari dua komponen utama:
    Base-case: n == 0 atau n == 1
    ![image](https://github.com/user-attachments/assets/ced93f94-7bff-46f3-837b-47a501be16de)
 
+## II. GUIDED
+
+### 1. Contoh Program Rekursif Menampilkan Deret Angka Menurun
+
+```go
+package main
+import "fmt"
+func main (){
+	var n int
+	fmt.Scan(&n)
+	baris(n)
+}
+
+func baris(bilangan int){
+	if bilangan == 1{
+		fmt.Println(1)
+	}else{
+		fmt.Println(bilangan)
+		baris(bilangan - 1)
+	}
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/dd416d2e-083c-4235-9280-a37a73844e2b)
+
+Kode di atas untuk mencetak bilangan dari input yang diberikan hingga angka 1. Pertama, program mengimpor paket fmt untuk menangani fungsi input dan output. Pada fungsi utama (main), program meminta pengguna untuk memasukkan sebuah bilangan bulat yang kemudian disimpan dalam variabel n. Setelah itu, fungsi baris dipanggil dengan n sebagai argumennya. Fungsi baris bertanggung jawab untuk mencetak bilangan mulai dari n hingga 1 secara berurutan. Di dalam fungsi ini, terdapat pengecekan kondisi: jika bilangan sama dengan 1, maka program hanya mencetak angka 1, yang menjadi kondisi dasar rekursi agar berhenti. Namun, jika bilangan lebih besar dari 1, program akan mencetak angka tersebut, lalu memanggil fungsi baris secara rekursif dengan nilai bilangan - 1. Dengan cara ini, program akan terus mencetak angka-angka secara menurun hingga mencapai kondisi dasar.
+
+### 2. Program Rekursif untuk Menghitung Penjumlahan Bilangan dari 1 hingga n
+
+```go
+package main
+
+import "fmt"
+
+func penjumlahan(n int) int {
+	if n == 1 {
+		return 1
+	} else {
+		return n + penjumlahan(n-1)
+	}
+}
+func main() {
+	var n int
+	fmt.Scan(&n)
+	fmt.Println(penjumlahan(n))
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/f0afb5d2-eb61-437b-b9b3-959f57ec886c)
+
+Kode di atas untuk menghitung jumlah bilangan dari 1 hingga bilangan n yang diberikan oleh pengguna, menggunakan pendekatan rekursif. Program diawali dengan mengimpor paket fmt untuk fungsi input dan output. Di dalam fungsi utama (main), pengguna diminta untuk memasukkan sebuah bilangan bulat yang kemudian disimpan dalam variabel n. Setelah itu, fungsi penjumlahan dipanggil dengan argumen n. Fungsi penjumlahan memiliki mekanisme rekursif untuk menghitung total penjumlahan dari 1 hingga n. Pada fungsi ini, terdapat pengecekan kondisi dasar, yaitu jika n bernilai 1, maka fungsi mengembalikan nilai 1, yang menjadi titik penghentian rekursi. Jika n lebih besar dari 1, maka fungsi akan mengembalikan hasil penjumlahan antara n dan hasil pemanggilan penjumlahan(n-1). Proses ini berlanjut hingga seluruh bilangan dari n hingga 1 dijumlahkan, dan hasil akhir penjumlahan ditampilkan melalui fungsi fmt.Println.
+
+### 3. Program Rekursif untuk Menghitung 2 Pangkat n
+
+```go
+package main
+import "fmt"
+
+// Fungsi rekursif untuk menghitung 2^n
+func pangkat(n int) int {
+	if n == 0 {
+		return 1
+	} else {
+		return 2 * pangkat(n-1)
+	}
+}
+func main(){
+	var n int 
+	fmt.Print("Masukkan nilai n:")
+	fmt.Scan(&n)
+	fmt.Println("Hasil dari 2 pangkat", n, "adalah:", pangkat(n))
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/ff7edf13-8f21-40b6-acf3-146c1d57500d)
+
+Kode di atas untuk menghitung hasil dari 2^n menggunakan metode rekursif. rogram dimulai dengan mengimpor paket fmt untuk mendukung fungsi input dan output. Dalam fungsi utama (main), pengguna diminta untuk memasukkan nilai n, yang merupakan eksponen untuk menghitung pangkat dua. Nilai n ini disimpan dalam variabel yang sama, dan kemudian fungsi pangkat dipanggil untuk menghitung hasilnya. Fungsi pangkat berisi logika rekursif untuk menghitung 2^n, di mana terdapat kondisi dasar yang mengembalikan nilai 1 jika n sama dengan 0 (karena 2^0 = 1). Jika n lebih besar dari 0, maka fungsi mengalikan 2 dengan hasil pemanggilan pangkat(n-1), yang secara rekursif terus mengurangi nilai n hingga mencapai kondisi dasar. Hasil akhir perhitungan pangkat ini kemudian ditampilkan kepada pengguna.
+
+### 4. Program Rekursif untuk Menghitung Faktorial dari Bilangan n
+
+```go
+package main
+import "fmt"
+
+var n int
+func faktorial (n int) int {
+	if n == 0 || n == 1 {
+		return 1
+	} else {
+		return n * faktorial(n-1)
+	}
+}
+func main (){
+
+	fmt. Scan(&n)
+	fmt.Println(faktorial(n))
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/6f74ab8b-0766-4008-be74-16baaa99842a)
+
+Kode di atas untuk menghitung nilai faktorial dari bilangan n yang diberikan oleh pengguna, menggunakan metode rekursif. Program dimulai dengan mengimpor paket fmt untuk fungsi input dan output. Pada bagian awal, terdapat variabel n yang dideklarasikan secara global. Fungsi utama (main) bertugas untuk membaca input pengguna yang dimasukkan melalui fmt.Scan(&n). Selanjutnya, fungsi faktorial dipanggil untuk menghitung faktorial dari n. Fungsi faktorial memiliki kondisi dasar yang memeriksa apakah n bernilai 0 atau 1, karena faktorial dari 0 dan 1 adalah 1. Jika n lebih besar dari 1, fungsi ini akan mengalikan n dengan hasil pemanggilan faktorial(n-1), sehingga proses rekursif akan berlanjut hingga mencapai kondisi dasar. Setelah selesai, hasil faktorial ditampilkan sebagai output.
+
+
+
+
+
+
+
+
+
+
 
 
 
