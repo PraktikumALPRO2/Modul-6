@@ -1,0 +1,19 @@
+package main
+import "fmt"
+
+func deretFibonacci(n int) int{
+	if n == 0{
+		return 0
+	}else if n == 1{
+		return 1
+	}else{
+		return deretFibonacci(n - 1) + deretFibonacci(n - 2)
+	}
+}
+
+func main(){
+	var n int
+	fmt.Print("Masukkan Bilangan: ")
+	fmt.Scan(&n)
+	fmt.Printf("Fibonacci dari bilangan %d adalah: %d\n", n , deretFibonacci(n))
+}
