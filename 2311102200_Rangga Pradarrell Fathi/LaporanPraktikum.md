@@ -500,30 +500,7 @@ func main() {
 
 #### Source Code
 ```go
-// Rangga Pradarrell Fathi
-// 2311102200
-// IF-11-05
-package main
 
-import "fmt"
-
-func pangkat(x, y int) int {
-	if y == 0 {
-		return 1
-	}
-	return x * pangkat(x, y-1)
-}
-
-func main() {
-	var x, y int
-	fmt.Print("Masukkan bilangan bulat x: ")
-	fmt.Scanln(&x)
-	fmt.Print("Masukkan bilangan bulat y: ")
-	fmt.Scanln(&y)
-
-	hasil := pangkat(x, y)
-	fmt.Printf("%d pangkat %d = %d\n", x, y, hasil)
-}
 ```
 ### Screenshot Code
 
