@@ -305,7 +305,34 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 #### Source Code
 ```go
+// Rangga Pradarrell Fathi
+// 2311102200
+// IF-11-05
+package main
 
+import "fmt"
+
+func FibonacciAngka(n int) int {
+	if n == 0 {
+		return 0
+	} else if n == 1 {
+		return 1
+	} else {
+		return FibonacciAngka(n-1) + FibonacciAngka(n-2)
+	}
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan jumlah suku Fibonacci yang ingin dicetak: ")
+	fmt.Scanln(&n)
+
+	fmt.Println("Deret Fibonacci hingga suku ke-", n)
+	for i := 0; i < n; i++ {
+		fmt.Print(FibonacciAngka(i), " ")
+	}
+	fmt.Println()
+}
 ```
 ### Screenshot Code
 
@@ -318,7 +345,31 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 #### Source Code
 ```go
+// Rangga Pradarrell Fathi
+// 2311102200
+// IF-11-05
+package main
 
+import "fmt"
+
+func printBintang(n int) {
+	if n == 0 {
+		return
+	}
+	printBintang(n - 1)
+	for i := 0; i < n; i++ {
+		fmt.Print("*")
+	}
+	fmt.Println()
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan N: ")
+	fmt.Scanln(&n)
+
+	printBintang(n)
+}
 ```
 ### Screenshot Code
 
@@ -333,7 +384,32 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 #### Source Code
 ```go
+// Rangga Pradarrell Fathi
+// 2311102200
+// IF-11-05
+package main
 
+import "fmt"
+
+func findFactors(n int, i int) {
+	if i > n {
+		return
+	}
+	if n%i == 0 {
+		fmt.Printf("%d ", i)
+	}
+	findFactors(n, i+1)
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan bilangan bulat positif: ")
+	fmt.Scan(&n)
+
+	fmt.Printf("Faktor dari %d adalah: ", n)
+	findFactors(n, 1)
+	fmt.Println()
+}
 ```
 ### Screenshot Code
 
@@ -342,13 +418,38 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 ## Unguided - 4
 ### Study Case
-**4. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu.**                             
+**Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu.**                             
 *Masukan terdiri dari sebuah bilangan bulat positif N.*                                                                 
 *Keluaran terdiri dari barisan bilangan dari N hingga 1 dan kembali ke N.*
 
 #### Source Code
 ```go
+// Rangga Pradarrell Fathi
+// 2311102200
+// IF-11-05
+package main
 
+import "fmt"
+
+func printSekuensial(n int) {
+	if n == 1 {
+		fmt.Print(n, " ")
+	} else {
+		fmt.Print(n, " ")
+		printSekuensial(n - 1)
+		fmt.Print(n, " ")
+	}
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan bilangan bulat positif N: ")
+	fmt.Scanln(&n)
+
+	fmt.Print("Keluaran: ")
+	printSekuensial(n)
+	fmt.Println()
+}
 ```
 ### Screenshot Code
 
@@ -357,11 +458,34 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 ## Unguided - 5
 ### Study Case
-****
+**Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.**                                 
+*Masukan terdiri dari sebuah bilangan bulat positif N.*                                        
+*Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.*
 
 #### Source Code
 ```go
+// Rangga Pradarrell Fathi
+// 2311102200
+// IF-11-05
+package main
 
+import "fmt"
+
+func cetakBilanganGanjil(n int) {
+	if n >= 1 {
+		cetakBilanganGanjil(n - 2)
+		fmt.Print(n, " ")
+	}
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan bilangan bulat positif N: ")
+	fmt.Scanln(&n)
+
+	fmt.Println("Barisan bilangan ganjil dari 1 hingga", n, "adalah:")
+	cetakBilanganGanjil(n)
+}
 ```
 ### Screenshot Code
 
@@ -370,13 +494,36 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Fungsi 'faktorial'
 
 ## Unguided - 6
 ### Study Case
-** Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.**                                 
-*Masukan terdiri dari sebuah bilangan bulat positif N.*                                        
-*Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.*
+**Buatlah program yang mengimplementasikan rekursif untuk mencari hasil pangkat dari dua buah bilangan.**                                     
+*Masukan terdiri dari bilangan bulat x dan y.*                                        
+*Keluaran terdiri dari hasil x dipangkatkan y.*    
 
 #### Source Code
 ```go
+// Rangga Pradarrell Fathi
+// 2311102200
+// IF-11-05
+package main
 
+import "fmt"
+
+func pangkat(x, y int) int {
+	if y == 0 {
+		return 1
+	}
+	return x * pangkat(x, y-1)
+}
+
+func main() {
+	var x, y int
+	fmt.Print("Masukkan bilangan bulat x: ")
+	fmt.Scanln(&x)
+	fmt.Print("Masukkan bilangan bulat y: ")
+	fmt.Scanln(&y)
+
+	hasil := pangkat(x, y)
+	fmt.Printf("%d pangkat %d = %d\n", x, y, hasil)
+}
 ```
 ### Screenshot Code
 
