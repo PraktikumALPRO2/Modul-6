@@ -273,6 +273,13 @@ func faktorial(n int) int {
 Program ini menghitung faktorial dari bilangan bulat yang dimasukkan oleh pengguna. Faktorial dari suatu bilangan n adalah hasil perkalian dari semua bilangan bulat positif dari satu hingga n. Program ini menggunakan pendekatan rekursif untuk menghitung faktorial, yang berarti fungsi akan memanggil dirinya sendiri hingga mencapai kondisi dasar.
 
 #### Algoritma Program
+1. Minta pengguna untuk memasukkan nilai bulat n.
+2. Fungsi faktorial dengan parameter n:
+   - Jika n sama dengan nol atau n sama dengan satu, kembalikan satu.
+   - Jika n lebih besar dari satu, kembalikan hasil dari n dikali dengan pemanggilan fungsi faktorial dengan argumen n dikurangi satu.
+3. Tampilkan hasil perhitungan faktorial dari n.
+
+#### Cara Kerja
 1. Program dimulai dari fungsi utama.
 2. Di dalam fungsi utama, variabel n dideklarasikan untuk menyimpan input dari pengguna.
 3. Program meminta pengguna untuk memasukkan nilai n menggunakan fungsi input.
@@ -282,6 +289,7 @@ Program ini menghitung faktorial dari bilangan bulat yang dimasukkan oleh penggu
    - Jika n lebih besar dari satu, fungsi mengalikan n dengan hasil pemanggilan fungsi faktorial dengan argumen n dikurangi satu.
 6. Proses ini akan berlanjut hingga mencapai kondisi di mana n sama dengan nol atau satu.
 7. Hasil akhir akan dicetak ke layar dengan format yang telah ditentukan.
+
 
 
 ## III. UNGUIDED
