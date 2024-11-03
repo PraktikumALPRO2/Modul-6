@@ -1,0 +1,20 @@
+package main
+import "fmt"
+
+func hitungPangkat(x int, y int) int {
+	if y == 0 {
+		return 1 
+	} else {
+		return x * hitungPangkat(x, y-1)
+	}
+}
+
+func main() {
+	var x, y int
+	fmt.Print("Masukkan X: ")
+	fmt.Scan(&x)
+	fmt.Print("Masukkan Y: ")
+	fmt.Scan(&y)
+	hasil := hitungPangkat(x, y)
+	fmt.Printf("Hasil Pangkat %d dengan %d adalah %d\n", x, y, hasil)
+}
