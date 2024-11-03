@@ -346,134 +346,74 @@ Program ini menghitung dan menampilkan deret Fibonacci hingga suku ke-n, di mana
 4. Hasil dari setiap suku Fibonacci dicetak dalam bentuk Fibonacci ke-i sama dengan hasil.
 5. Program berakhir setelah menampilkan semua suku Fibonacci hingga suku ke-n.
 
-## 2. Program Penentuan Pemenang Kompetisi Pemrograman Berdasarkan Skor dan Waktu Penyelesaian
-
+## 2. Program Pola Bintang Menggunakan Fungsi Rekursif
 #### Source Code
 ```go
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"math"
-	"os"
-	"strconv"
-	"strings"
+    "fmt"
 )
 
-// Prosedur untuk menghitung skor peserta
-func hitungSkor(soal [8]int, totalSoal *int, totalWaktu *int) {
-	*totalSoal = 0
-	*totalWaktu = 0
+// Fungsi rekursif untuk mencetak bintang pada setiap baris
+func printStars(n int) {
+    if n == 0 {
+        return
+    }
+    fmt.Print("*")
+    printStars(n - 1)
+}
 
-	// Hitung jumlah soal yang berhasil diselesaikan dan total waktu yang dibutuhkan
-	for _, waktu := range soal {
-		if waktu < 301 {
-			*totalSoal++
-			*totalWaktu += waktu
-		}
-	}
+// Fungsi rekursif untuk mencetak pola bintang hingga baris ke-n
+func printPattern(n int, current int) {
+    if current > n {
+        return
+    }
+    printStars(current)
+    fmt.Println()
+    printPattern(n, current + 1)
 }
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	var pemenangNama string
-	var maxSoalDiselesaikan int
-	var minWaktu int = math.MaxInt32
+    var n int
+    fmt.Print("Masukkan jumlah baris pola bintang: ")
+    fmt.Scan(&n)
 
-	for {
-		fmt.Printf("Masukkan nama peserta diikuti dengan waktu untuk setiap soal atau ketik 'Selesai' untuk berhenti:")
-
-		// Membaca input peserta
-		scanner.Scan()
-		input := scanner.Text()
-
-		if strings.ToLower(input) == "selesai" {
-			break
-		}
-
-		// Memisahkan input menjadi nama peserta dan waktu pengerjaan soal
-		parts := strings.Fields(input)
-		if len(parts) < 9 {
-			fmt.Println("Input tidak valid. Pastikan memasukkan nama peserta dan 8 waktu pengerjaan soal.")
-			continue
-		}
-
-		pesertaNama := parts[0]
-
-		// Simpan waktu pengerjaan soal-soal ke array
-		var soal [8]int
-		for i := 1; i <= 8; i++ {
-			soal[i-1], _ = strconv.Atoi(parts[i])
-		}
-
-		// Variabel untuk menyimpan hasil hitung skor
-		var totalSoal, totalWaktu int
-
-		// Hitung skor peserta menggunakan prosedur
-		hitungSkor(soal, &totalSoal, &totalWaktu)
-
-		// Tentukan pemenang berdasarkan jumlah soal yang diselesaikan dan waktu total
-		if totalSoal > maxSoalDiselesaikan || (totalSoal == maxSoalDiselesaikan && totalWaktu < minWaktu) {
-			pemenangNama = pesertaNama
-			maxSoalDiselesaikan = totalSoal
-			minWaktu = totalWaktu
-		}
-	}
-
-	// Tampilkan hasil
-	if pemenangNama != "" {
-		fmt.Printf("Pemenang: %s\n", pemenangNama)
-		fmt.Printf("Jumlah soal yang diselesaikan: %d\n", maxSoalDiselesaikan)
-		fmt.Printf("Total waktu: %d menit\n", minWaktu)
-	} else {
-		fmt.Println("Tidak ada data peserta.")
-	}
+    fmt.Println("Pola bintang:")
+    printPattern(n, 1)
 }
+
 
 ```
 #### Screenshoot Source Code
-![Screenshot 2024-10-18 171334](https://github.com/user-attachments/assets/593b23ce-b6d5-42ed-86ca-d007a15747e4)
+![Screenshot 2024-11-03 200738](https://github.com/user-attachments/assets/33089e9b-fd15-448e-beec-35ea79f56bad)
 
 #### Screenshoot Output
-![Screenshot 2024-10-18 171340](https://github.com/user-attachments/assets/a39e3dba-3718-460e-a1f0-bc473974674a)
+![Screenshot 2024-11-03 200743](https://github.com/user-attachments/assets/189fb2f7-caec-4f40-81ef-384628a4d63c)
 
 #### Deskripsi Program
-Program ini menentukan pemenang kompetisi pemrograman berdasarkan jumlah soal yang berhasil diselesaikan dan total waktu pengerjaan. Setiap peserta diberi 8 soal, dan jika waktu pengerjaan soal lebih dari 301 menit, soal tersebut dianggap tidak terselesaikan. Program membaca input nama peserta beserta waktu pengerjaan soal, lalu menghitung jumlah soal yang diselesaikan dan total waktu yang diperlukan. Pemenang ditentukan berdasarkan siapa yang menyelesaikan soal terbanyak, dan jika sama, yang menyelesaikan dengan waktu paling sedikit menang.
+Program ini digunakan untuk menampilkan pola bintang berbentuk segitiga yang terdiri dari beberapa baris sesuai input yang diberikan oleh pengguna. Pengguna akan memasukkan jumlah baris, dan program akan mencetak pola bintang yang bertambah pada setiap baris, mulai dari satu bintang di baris pertama hingga sejumlah bintang sesuai jumlah baris yang diinginkan. Program ini menggunakan fungsi rekursif untuk mencetak bintang dalam setiap baris dan mencetak pola secara keseluruhan.
 
 #### Algoritma Program Penentuan Pemenang Kompetisi Pemrograman:
-1. Mulai Program
-2. Inisialisasi variabel:
-   - `pemenangNama` untuk menyimpan nama pemenang.
-   - `maxSoalDiselesaikan` untuk menyimpan jumlah soal maksimal yang berhasil diselesaikan oleh peserta.
-   - `minWaktu` untuk menyimpan waktu total minimal peserta dalam menyelesaikan soal.
-3. Ulangi (loop) proses input:
-   - Minta input dari pengguna berupa nama peserta diikuti oleh 8 waktu pengerjaan soal (dalam menit).
-   - Jika input adalah "Selesai", keluar dari loop.
-   - Pisahkan input menjadi `nama peserta` dan `waktu pengerjaan soal` dalam array.
-4. Proses tiap peserta:
-   - Inisialisasi variabel `totalSoal` dan `totalWaktu` untuk menyimpan jumlah soal yang diselesaikan dan waktu total pengerjaan peserta.
-   - Loop 8 soal:
-     - Jika waktu pengerjaan soal kurang dari 301 menit, tambahkan soal ke `totalSoal` dan tambahkan waktu ke `totalWaktu`.
-5. Bandingkan hasil peserta dengan pemenang sementara:
-   - Jika jumlah soal yang diselesaikan peserta lebih banyak daripada `maxSoalDiselesaikan`, peserta ini menjadi pemenang sementara.
-   - Jika jumlah soal sama, bandingkan waktu total. Peserta dengan waktu lebih sedikit menjadi pemenang.
-6. Ulangi langkah 3-5 untuk setiap peserta hingga semua peserta telah dimasukkan.
-7. Tampilkan pemenang:
-   - Cetak nama pemenang, jumlah soal yang diselesaikan, dan waktu total.
-8. Selesai Program.
+1. Input Pengguna: Program meminta pengguna untuk memasukkan sebuah bilangan bulat yang menunjukkan jumlah baris dalam pola bintang.
+2. Fungsi cetak bintang: Fungsi ini adalah fungsi rekursif yang digunakan untuk mencetak sejumlah bintang dalam satu baris:
+   - Jika nilai input sama dengan nol, fungsi berhenti dan tidak mencetak bintang.
+   - Jika nilai input lebih dari nol, fungsi mencetak satu bintang dan memanggil dirinya sendiri dengan nilai input dikurangi satu, sehingga mencetak bintang secara berulang hingga mencapai jumlah yang diinginkan.
+3. Fungsi cetak pola: Fungsi ini adalah fungsi rekursif untuk mencetak pola bintang baris demi baris:
+   - Fungsi menerima dua parameter, yaitu jumlah total baris yang diinginkan dan sebuah nilai yang menunjukkan jumlah bintang di baris saat ini.
+   - Jika nilai baris saat ini lebih besar dari jumlah total baris, fungsi berhenti dan pola selesai dicetak.
+   - Jika nilai baris saat ini masih kurang atau sama dengan jumlah total baris, fungsi memanggil fungsi cetak bintang untuk mencetak sejumlah bintang di baris tersebut, kemudian menampilkan baris baru, dan memanggil dirinya sendiri dengan nilai baris saat ini ditambah satu.
+4. Output: Program akan mencetak pola bintang dalam bentuk segitiga, sesuai dengan jumlah baris yang diminta oleh pengguna.
 
 
 #### Cara Kerja
-1. Program dimulai dengan menginisialisasi variabel untuk menyimpan nama pemenang, jumlah soal maksimal yang diselesaikan, dan waktu total minimal.
-2. Program kemudian meminta input pengguna dalam bentuk satu baris yang berisi nama peserta diikuti dengan waktu pengerjaan 8 soal. Jika input adalah "Selesai", program berhenti meminta input.
-3. Untuk setiap peserta, program membaca nama dan waktu pengerjaan soal. Waktu pengerjaan setiap soal yang lebih dari atau sama dengan 301 menit dianggap tidak terselesaikan. Jika waktu pengerjaan kurang dari 301 menit, soal tersebut dihitung sebagai soal yang diselesaikan, dan waktu pengerjaannya ditambahkan ke total waktu.
-4. Setelah menghitung jumlah soal yang diselesaikan dan total waktu untuk setiap peserta, program membandingkan hasil peserta tersebut dengan hasil pemenang sementara:
-- Jika peserta baru menyelesaikan lebih banyak soal, maka peserta baru ini menjadi pemenang sementara.
-- Jika jumlah soal sama dengan pemenang sementara, peserta dengan waktu total lebih sedikit menjadi pemenang sementara.
-5. Proses ini berulang sampai semua peserta dimasukkan.
-6. Setelah semua peserta diinput, program menampilkan nama pemenang, jumlah soal yang diselesaikan, dan waktu total yang dihabiskan.
-7. Program selesai setelah menampilkan hasil pemenang.
+1. Program dimulai dengan meminta pengguna untuk memasukkan jumlah baris dalam pola bintang.
+2. Setelah menerima input, program memanggil fungsi cetak pola dengan parameter jumlah total baris yang diinginkan dan baris saat ini dimulai dari satu.
+3. Proses Rekursi:
+   - Di setiap pemanggilan fungsi cetak pola, program mencetak sejumlah bintang sesuai dengan baris saat ini dengan memanggil fungsi cetak bintang.
+   - Fungsi cetak bintang mencetak bintang satu per satu hingga jumlahnya sesuai dengan baris saat ini, kemudian berhenti.
+   - Setelah fungsi cetak bintang selesai, program menambahkan baris baru dan memanggil fungsi cetak pola lagi dengan baris saat ini ditambah satu, sehingga jumlah bintang di baris berikutnya bertambah satu.
+4. Proses ini berulang hingga nilai baris saat ini lebih besar dari jumlah total baris, di mana program berhenti dan pola bintang selesai dicetak.
 
 ## 3. Program untuk Mencetak Deret Bilangan Berdasarkan Algoritma 3n+1
 
