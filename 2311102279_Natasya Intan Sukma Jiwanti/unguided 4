@@ -1,0 +1,30 @@
+package main
+import "fmt"
+
+func printmundur(n int) {
+	if n < 1 {
+		return
+	} else {
+		fmt.Print(n, " ")
+		printmundur(n - 1)
+	}
+}
+
+func printmaju(n int, i int) {
+	if i > n {
+		return
+	} else {
+		fmt.Print(i, " ")
+		printmaju(n, i + 1) 
+	}
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan Bilangan: ")
+	fmt.Scan(&n)
+	fmt.Println()
+	printmundur(n)
+	printmaju(n, 2) 
+	fmt.Println() 
+}
