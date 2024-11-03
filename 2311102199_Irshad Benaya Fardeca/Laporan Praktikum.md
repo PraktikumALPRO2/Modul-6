@@ -1,6 +1,6 @@
 <h2 align="center">LAPORAN PAKTIKUM ALGORITMA DAN PEMROGRAMAN 2</h2>
-<h2 align="center">MODUL 3</h2>
-<h2 align="center">FUNGSI</h2>
+<h2 align="center">MODUL 6</h2>
+<h2 align="center">REKURSIF</h2>
 
 <p align="center"><img src=https://github.com/user-attachments/assets/37e9c953-078b-4ef4-97e7-a5d25344e50b alt="Logo" width="300"/><p>
 
@@ -19,6 +19,24 @@
 <br></br>
 
 #### I. DASAR TEORI
+
+Fungsi dapat bersifat rekursif, artinya mereka dapat memanggil diri mereka sendiri, baik secara langsung maupun tidak langsung. Rekursif adalah teknik yang kuat untuk banyak masalah dan tentu saja sangat penting dalam pemrosesan struktur data rekursif.
+
+rekursi adalah proses pengulangan item dengan cara yang serupa. konsep yang sama juga berlaku dalam bahasa pemograman. jika sebuah program memungkinkan untuk memanggil fungsi di dalam fungsi yang sama, maka itu disebut pemanggilan fungsi rekursif. contoh
+
+func rekursif(){
+  /* fungsi memanggil dirinya sendiri */
+  rekursif()
+}
+
+func main(){
+  rekursif()
+}
+
+
+bahasa pemograman Go mendukung rekursi. artinya, memungkinkan suatu fungsi untuk memanggil dirinya sendiri. tetapi saat menggunakan rekursi, pemogram harus berhati-hati untuk mementukan kondisi keluar dari fungsi, jika tidak maka akan menjadi loop tidak terbatas.
+
+
 
 <br></br>
 
@@ -216,5 +234,5 @@ Program ini dirancang untuk menghitung faktorial dari sebuah bilangan bulat non-
 
 
 ### Referensi
-
+[1] Donovan, A., Kernighan, B. (2015). The Go Programming Language. United Kingdom: Pearson Education.
 
