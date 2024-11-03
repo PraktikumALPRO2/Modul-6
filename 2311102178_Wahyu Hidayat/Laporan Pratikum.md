@@ -394,7 +394,7 @@ func main() {
 #### Deskripsi Program
 Program ini digunakan untuk menampilkan pola bintang berbentuk segitiga yang terdiri dari beberapa baris sesuai input yang diberikan oleh pengguna. Pengguna akan memasukkan jumlah baris, dan program akan mencetak pola bintang yang bertambah pada setiap baris, mulai dari satu bintang di baris pertama hingga sejumlah bintang sesuai jumlah baris yang diinginkan. Program ini menggunakan fungsi rekursif untuk mencetak bintang dalam setiap baris dan mencetak pola secara keseluruhan.
 
-#### Algoritma Program Penentuan Pemenang Kompetisi Pemrograman:
+#### Algoritma Program 
 1. Input Pengguna: Program meminta pengguna untuk memasukkan sebuah bilangan bulat yang menunjukkan jumlah baris dalam pola bintang.
 2. Fungsi cetak bintang: Fungsi ini adalah fungsi rekursif yang digunakan untuk mencetak sejumlah bintang dalam satu baris:
    - Jika nilai input sama dengan nol, fungsi berhenti dan tidak mencetak bintang.
@@ -415,7 +415,7 @@ Program ini digunakan untuk menampilkan pola bintang berbentuk segitiga yang ter
    - Setelah fungsi cetak bintang selesai, program menambahkan baris baru dan memanggil fungsi cetak pola lagi dengan baris saat ini ditambah satu, sehingga jumlah bintang di baris berikutnya bertambah satu.
 4. Proses ini berulang hingga nilai baris saat ini lebih besar dari jumlah total baris, di mana program berhenti dan pola bintang selesai dicetak.
 
-## 3. Program untuk Mencetak Deret Bilangan Berdasarkan Algoritma 3n+1
+## 3. Program Rekursif untuk Menampilkan Faktor Bilangan
 
 #### Source Code
 ```go
@@ -425,68 +425,243 @@ import (
 	"fmt"
 )
 
-func cetakDeret(n int) {
-	// Selama n bukan 1, teruskan cetak deret
-	for n != 1 {
-		fmt.Print(n, " ")
-		if n%2 == 0 {
-			n = n / 2 // Jika n genap
-		} else {
-			n = 3*n + 1 // Jika n ganjil
-		}
+// Fungsi rekursif untuk mencari faktor dari N dalam urutan menaik
+func findFactors(n, current int) {
+	if current > n {
+		return
 	}
-	// Cetak 1 sebagai elemen terakhir
-	fmt.Print(1)
+	if n%current == 0 {
+		fmt.Print(current, " ")
+	}
+	findFactors(n, current+1)
 }
 
 func main() {
 	var n int
-	fmt.Print("Masukkan nilai awal: ")
+	fmt.Print("Masukkan bilangan bulat positif: ")
 	fmt.Scan(&n)
+	fmt.Print("Faktor dari ", n, " adalah: ")
+	findFactors(n, 1)
+	fmt.Println()
+}
+```
+#### Screenshoot Source Code
+![Screenshot 2024-11-03 201619](https://github.com/user-attachments/assets/57b03312-7e68-4b8e-aed3-409e266c3b6f)
 
-	// Panggil fungsi untuk mencetak deret
-	cetakDeret(n)
+
+#### Screenshoot Output
+![Screenshot 2024-11-03 201623](https://github.com/user-attachments/assets/b2a46845-7794-48f7-9f37-8a0a4486cff5)
+
+#### Deskripsi Program
+Program ini adalah implementasi dalam bahasa Go untuk mencari faktor-faktor dari sebuah bilangan positif menggunakan rekursi. Program akan menerima input berupa bilangan bulat positif dari pengguna, kemudian menampilkan semua faktor dari bilangan tersebut dalam urutan menaik, mulai dari satu hingga bilangan itu sendiri.
+
+#### Algoritma Program
+1. Input: Terima input bilangan bulat positif dari pengguna.
+2. Pencarian Faktor:
+   - Gunakan fungsi rekursif findFactors untuk mencari dan mencetak faktor-faktor dari bilangan tersebut.
+   - Mulai dengan nilai current sama dengan satu, dan cek apakah current merupakan faktor dari bilangan tersebut.
+   - Jika benar, cetak current sebagai faktor.
+   - Ulangi langkah ini dengan menaikkan current hingga current melebihi bilangan input.
+3. Output: Tampilkan faktor-faktor dari bilangan dalam urutan menaik.
+
+#### Cara Kerja
+1. Fungsi main:
+   - Meminta pengguna memasukkan bilangan bulat positif.
+   - Memanggil fungsi findFactors dengan current bernilai satu untuk mulai mencari faktor dari bilangan tersebut.
+2. Fungsi Rekursif findFactors:
+   - Fungsi ini memiliki dua parameter, yaitu n sebagai bilangan yang dicari faktornya dan current sebagai angka yang sedang diperiksa apakah merupakan faktor.
+   - Langkah-langkah fungsi findFactors:
+     - Basis Rekursi: Jika current lebih besar dari n, hentikan fungsi karena semua faktor sudah ditemukan.
+     - Cek Faktor: Jika n habis dibagi current, berarti current adalah faktor dari n, sehingga current dicetak.
+     - Panggil Diri Sendiri: Panggil kembali findFactors dengan current ditambah satu, sehingga fungsi memeriksa angka berikutnya.
+3. Contoh Jalannya Program:
+   - Misal input dari pengguna adalah dua belas.
+   - Fungsi findFactors akan dipanggil, dan angka-angka dari satu hingga dua belas akan diperiksa satu per satu apakah merupakan faktor dari dua belas.
+   - Faktor-faktor yang ditemukan (satu, dua, tiga, empat, enam, dua belas) akan dicetak dalam urutan menaik.
+
+
+## 4. Program yang Mengimplementasikan Rekursif untuk Menampilkan Barisan Bilangan Tertentu
+#### Source Code
+```go
+package main
+
+import (
+	"fmt"
+)
+
+// Fungsi rekursif untuk menampilkan bilangan dari n sampai 1 dan kembali ke n
+func printSequence(n, current int) {
+	// Cetak bilangan menurun dari current ke 1
+	if current > 0 {
+		fmt.Print(current, " ")
+		printSequence(n, current-1) // Rekursif turun ke bawah
+	}
+
+	// Cetak bilangan naik dari 2 hingga n
+	if current < n {
+		fmt.Print(current+1, " ")
+	}
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan bilangan bulat positif: ")
+	fmt.Scan(&n) // Menerima input dari pengguna
+	fmt.Print("Hasil barisan: ")
+	printSequence(n, n) // Memanggil fungsi dengan nilai awal n
+	fmt.Println() // Pindah ke baris baru
+}
+
+```
+#### Screenshoot Source Code
+![Screenshot 2024-11-03 202412](https://github.com/user-attachments/assets/b030d046-57ad-4daa-9723-c9a9bd02197c)
+
+#### Screenshoot Output
+![Screenshot 2024-11-03 202420](https://github.com/user-attachments/assets/74c5ac64-a970-49b4-af7c-6df6173b4054)
+
+#### Deskripsi Program
+Program ini meminta pengguna untuk memasukkan sebuah bilangan bulat positif n. Kemudian, menggunakan fungsi rekursif, program mencetak urutan angka dari n hingga satu, diikuti dengan angka dari dua hingga n. Dengan kata lain, program ini menampilkan urutan bilangan secara menurun dan kemudian kembali menaik.
+
+#### Algoritma Program
+1. Input Bilangan: Menerima input dari pengguna berupa bilangan bulat positif n.
+2. Fungsi Rekursif: Menggunakan fungsi printSequence dengan dua parameter:
+   - n: bilangan bulat positif yang diinputkan oleh pengguna.
+   - current: bilangan saat ini yang akan dicetak, dimulai dari n dan berkurang hingga satu.
+3. Mencetak Bilangan Menurun:
+   - Jika current lebih besar dari nol, cetak nilai current.
+   - Panggil fungsi printSequence secara rekursif dengan current dikurangi satu.
+4. Mencetak Bilangan Menaik:
+   - Setelah mencapai satu, jika current kurang dari n, cetak current ditambah satu untuk menampilkan bilangan yang naik hingga n.
+5. Output: Tampilkan hasil urutan bilangan di konsol.
+
+#### Cara Kerja
+1. Program dimulai dari fungsi main, di mana variabel n dideklarasikan untuk menyimpan input pengguna.
+2. Pengguna diminta untuk memasukkan bilangan bulat positif.
+3. Fungsi printSequence dipanggil dengan n sebagai nilai awal untuk current.
+4. Fungsi printSequence beroperasi dengan cara berikut:
+   - Pertama, mencetak angka menurun dari current hingga satu.
+   - Setelah mencapai satu, fungsi mulai mencetak angka menaik dari dua hingga n.
+5. Program berakhir setelah semua angka dicetak dan mengeluarkan hasil di baris baru.
+
+## 5. Program Rekursif untuk Menampilkan Bilangan Ganjil
+#### Source Code
+```go
+package main
+
+import (
+	"fmt"
+)
+
+// Fungsi rekursif untuk menampilkan bilangan ganjil dari 1 hingga N
+func cetakBilanganGanjil(n, current int) {
+	if current > n {
+		return
+	}
+	if current%2 != 0 {
+		fmt.Print(current, " ")
+	}
+	cetakBilanganGanjil(n, current+1)
+}
+
+func main() {
+	var N int
+	fmt.Print("Masukkan bilangan bulat positif N: ")
+	fmt.Scan(&N)
+
+	fmt.Print("Bilangan ganjil dari 1 hingga ", N, ": ")
+	cetakBilanganGanjil(N, 1)
+	fmt.Println()
 }
 
 
 ```
 #### Screenshoot Source Code
-![Screenshot 2024-10-18 172458](https://github.com/user-attachments/assets/f282917e-7d64-4018-943e-9a4602510e13)
+![Screenshot 2024-11-03 203151](https://github.com/user-attachments/assets/6d661778-4b65-49f0-8b35-1c403f4fd5e5)
 
 #### Screenshoot Output
-![Screenshot 2024-10-18 172502](https://github.com/user-attachments/assets/5b631b76-0a99-4608-898f-6cae76bec825)
+![Screenshot 2024-11-03 203156](https://github.com/user-attachments/assets/0fc8a9c9-95f2-4778-a180-4d0035b8fb0a)
+
 
 #### Deskripsi Program
-Program ini dirancang untuk mencetak deret bilangan berdasarkan aturan algoritma 3n+1, yang juga dikenal sebagai Collatz Conjecture. Program dimulai dengan sebuah bilangan bulat positif sebagai input. Jika bilangan tersebut genap, maka akan dibagi dua; namun jika ganjil, akan dihitung menggunakan rumus tiga kali bilangan ditambah satu. Proses ini terus berulang hingga bilangan mencapai satu, yang menjadi bilangan terakhir dalam deret. Program ini menggunakan sebuah prosedur untuk melakukan perhitungan dan mencetak hasilnya dalam satu baris dengan setiap elemen dipisahkan oleh spasi.
+Program ini bertujuan untuk menampilkan barisan bilangan ganjil dari 1 hingga N dengan menggunakan metode rekursif. Pengguna diminta untuk memasukkan sebuah bilangan bulat positif N, kemudian program akan mencetak bilangan ganjil satu per satu sampai mencapai nilai N.
 
-#### Algoritma Program
-1. Mulai
-2. Minta pengguna untuk memasukkan bilangan bulat positif n.
-3. Cetak nilai n.
-4. Lakukan perulangan selama nilai n belum sama dengan satu:
-- Jika n adalah bilangan genap, bagi nilai n dengan dua.
-- Jika n adalah bilangan ganjil, ubah nilai n menjadi tiga kali n ditambah satu.
-- Cetak nilai n setelah dilakukan perhitungan.
-5. Akhiri perulangan ketika nilai n menjadi satu.
-6. Cetak nilai satu sebagai elemen terakhir deret.
-7. Selesai
+#### Algoritma Program 
+1. Minta pengguna memasukkan bilangan bulat positif N.
+2. Buat sebuah fungsi rekursif bernama cetakBilanganGanjil yang menerima dua parameter: nilai N (batas akhir) dan current (bilangan yang sedang diperiksa).
+3. Di dalam fungsi rekursif:
+   - Jika nilai current melebihi N, hentikan fungsi.
+   - Jika current adalah bilangan ganjil, cetak bilangan tersebut.
+   - Panggil fungsi cetakBilanganGanjil lagi dengan current bertambah satu.
+4. Panggil fungsi cetakBilanganGanjil dari fungsi utama, dimulai dari 1.
+5. Program mencetak bilangan ganjil dari 1 hingga N.
 
 #### Cara Kerja
-1. Input Pengguna:
-- Program dimulai dengan meminta pengguna memasukkan sebuah bilangan bulat positif. Nilai ini disimpan dalam variabel n, yang akan menjadi titik awal deret.
-2. Fungsi Perhitungan Deret:
-- Program menggunakan fungsi cetakDeret(n) untuk melakukan perhitungan deret. Setiap kali fungsi ini dipanggil, ia akan mencetak bilangan awal, kemudian menghitung elemen-elemen berikutnya dalam deret sesuai aturan berikut:
-  - Jika bilangan genap, maka bilangan tersebut dibagi dua.
-  - Jika bilangan ganjil, maka dihitung dengan rumus tiga kali bilangan ditambah satu.
-- Hasil perhitungan dicetak pada layar, dengan elemen-elemen deret dipisahkan oleh spasi.
-3. Pengulangan Sampai Nilai Satu:
-- Perhitungan berulang terus menerus hingga nilai n mencapai satu. Ini sesuai dengan aturan Collatz Conjecture, di mana setiap bilangan pada akhirnya akan turun menjadi satu.
-- Setiap nilai yang dihasilkan dari perhitungan (baik hasil pembagian atau penambahan) dicetak dalam satu baris hingga deret selesai.
-4. Akhir Program:
-- Ketika nilai n sudah menjadi satu, program mencetak "1" sebagai elemen terakhir dan berhenti.
+1. Input Pengguna: Program meminta pengguna untuk memasukkan bilangan bulat positif N. Misalnya, jika pengguna memasukkan 20, maka N menjadi 20.
+2. Inisialisasi dan Pemanggilan Fungsi: Program memanggil fungsi rekursif cetakBilanganGanjil dengan N dan memulai dari 1 sebagai bilangan awal (current).
+3. Logika Rekursif:
+   - Periksa Kondisi Akhir: Jika current lebih besar dari N, maka fungsi berhenti. Ini mencegah program terus berjalan tanpa batas.
+   - Cek Bilangan Ganjil: Jika current adalah bilangan ganjil (memiliki sisa 1 saat dibagi 2), program mencetak bilangan tersebut.
+   - Panggilan Rekursif: Fungsi cetakBilanganGanjil dipanggil lagi dengan current bertambah satu. Ini membuat program terus memeriksa bilangan berikutnya hingga mencapai N.
+4. Cetak Hasil: Program mencetak semua bilangan ganjil dari 1 hingga N dalam satu baris, dipisahkan oleh spasi.
+
+## 6. Program Rekursif untuk Menghitung Pangkat Bilangan
+#### Source Code
+```go
+package main
+
+import (
+	"fmt"
+)
+
+// Fungsi rekursif untuk menghitung x dipangkatkan y
+func pangkat(x, y int) int {
+	if y == 0 {
+		return 1 // Basis: jika y = 0, hasilnya adalah 1
+	}
+	return x * pangkat(x, y-1) // Rekursi: x * (x pangkat y-1)
+}
+
+func main() {
+	var x, y int
+	fmt.Print("Masukkan bilangan bulat x: ")
+	fmt.Scan(&x)
+	fmt.Print("Masukkan bilangan bulat y: ")
+	fmt.Scan(&y)
+
+	hasil := pangkat(x, y)
+	fmt.Printf("Hasil %d dipangkatkan %d adalah %d\n", x, y, hasil)
+}
+
+```
+#### Screenshoot Source Code
+![Screenshot 2024-11-03 204030](https://github.com/user-attachments/assets/a582e20d-8bc2-4cee-84c5-30f34eed0054)
+
+#### Screenshoot Output
+![Screenshot 2024-11-03 204035](https://github.com/user-attachments/assets/52820c11-4f6f-4b56-90ae-7264b5bb293a)
+
+
+#### Deskripsi Program
+Program ini bertujuan untuk menghitung hasil pangkat dari dua bilangan bulat x dan y menggunakan metode rekursif. Pengguna diminta untuk memasukkan bilangan x (basis) dan y (pangkat), kemudian program akan menghitung hasil x dipangkatkan y tanpa menggunakan pustaka matematika bawaan.
+
+#### Algoritma Program 
+1. Minta pengguna memasukkan dua bilangan bulat x dan y.
+2. Buat fungsi rekursif bernama pangkat yang menerima dua parameter: x (basis) dan y (pangkat).
+3. Di dalam fungsi rekursif:
+   - Jika y sama dengan nol, kembalikan hasil satu. Ini adalah kasus dasar di mana bilangan apa pun yang dipangkatkan nol adalah satu.
+   - Jika y lebih besar dari nol, kembalikan hasil x dikalikan dengan panggilan rekursif pangkat dengan y dikurangi satu.
+4. Panggil fungsi pangkat dari fungsi utama dengan x dan y sebagai argumen.
+5. Cetak hasil perhitungan pangkat.
+
+#### Cara Kerja
+1. Input Pengguna: Program meminta pengguna untuk memasukkan dua bilangan bulat, x sebagai bilangan dasar dan y sebagai bilangan pangkat. Misalnya, jika pengguna memasukkan 2 untuk x dan 3 untuk y, maka x = 2 dan y = 3.
+2. Inisialisasi dan Pemanggilan Fungsi: Program memanggil fungsi pangkat untuk menghitung x dipangkatkan y.
+3. Logika Rekursif:
+   - Kasus Dasar: Jika y adalah nol, hasilnya adalah satu, dan fungsi berhenti. Ini karena bilangan apa pun yang dipangkatkan nol hasilnya satu.
+   - Perhitungan Rekursif: Jika y lebih besar dari nol, hasilnya dihitung dengan mengalikan x dengan hasil dari panggilan fungsi pangkat dengan y berkurang satu. Ini berlanjut sampai y menjadi nol.
+4. Cetak Hasil: Program menghitung dan mencetak hasil dari x dipangkatkan y.
 
 ### Kesimpulan
-Penggunaan prosedur dalam pemrograman adalah alat yang sangat berguna untuk menyusun kode secara terstruktur dan efisien. Dengan memahami cara mendeklarasikan dan menggunakan prosedur, programmer dapat meningkatkan keterbacaan dan keorganisasian kode mereka, serta memudahkan proses debugging dan pengembangan di masa mendatang. Prosedur memberikan cara untuk membagi program menjadi bagian yang lebih kecil dan lebih mudah dikelola, menjadikannya komponen penting dalam pemrograman modern.
+ekursif adalah teknik dalam pemrograman di mana sebuah fungsi memanggil dirinya sendiri untuk memecah masalah kompleks menjadi sub-masalah yang lebih sederhana. Teknik ini membantu menyelesaikan masalah secara bertahap hingga mencapai solusi akhir. Ada dua jenis utama rekursif: rekursif langsung, di mana fungsi memanggil dirinya sendiri secara langsung, dan rekursif tidak langsung, di mana fungsi memanggil fungsi lain yang kemudian memanggil fungsi pertama. Fungsi rekursif harus memiliki base case, yaitu kondisi yang menghentikan rekursi, dan recursive case, yaitu bagian yang memanggil fungsi kembali dengan masalah yang lebih kecil. Base case dan recursive case sangat penting untuk memastikan bahwa fungsi rekursif tidak berjalan tanpa henti dan dapat menyelesaikan masalah secara efisien.
 
 ## Referensi 
 [1] Sharma, D. (2022). Recursive Function Fundamentals in Go. Journal of Go Programming, 21(3), 147-162.
