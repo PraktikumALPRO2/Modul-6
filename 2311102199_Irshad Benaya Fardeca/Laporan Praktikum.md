@@ -19,7 +19,7 @@
 <br></br>
 
 #### I. DASAR TEORI
-
+#### Rekursif
 Fungsi dapat bersifat rekursif, artinya fungsi dapat memanggil dirinya sendiri, baik secara langsung maupun tidak langsung. Rekursif adalah teknik yang kuat untuk banyak masalah dan tentu saja sangat penting dalam pemrosesan struktur data rekursif. Contoh : 
 
 ```
@@ -33,9 +33,11 @@ func main(){
 }
 ```
 
+
+##### Base-case
+Base-case adalah kondisi proses rekursif berhenti. Base-case merupakan hal terpenting dan pertama yang harus diketahui ketika akan membuat program rekursif. Mustahil membuat program rekursif tanpa mengetahui base-case terlebih dahulu.
+
 Bahasa pemograman Go mendukung rekursif. artinya, memungkinkan suatu fungsi untuk memanggil dirinya sendiri. tetapi saat menggunakan rekursif, pemogram harus berhati-hati untuk mementukan kondisi keluar dari fungsi, jika tidak maka akan menjadi loop tidak terbatas.
-
-
 
 <br></br>
 
@@ -379,7 +381,10 @@ func main() {
 ##### Deskripsi Program
 Program ini dirancang untuk menghitung hasil pangkat dari dua bilangan bulat yang diinputkan oleh user. Program akan meminta user memasukkan bilangan pokok (x) dan pangkat (y). Fungsi pangkat kemudian akan menghitung hasil pangkat dengan menggunakan rekursif. Fungsi ini memiliki tiga kondisi: jika pangkat (y) adalah 0, maka hasilnya adalah 1; jika pangkat (y) positif, maka hasil dihitung dengan mengalikan bilangan pokok dengan hasil pangkat dari bilangan pokok yang dipangkatkan dengan y-1; dan jika pangkat (y) negatif, maka hasil dihitung dengan membagi 1 dengan hasil pangkat dari bilangan pokok yang dipangkatkan dengan nilai absolut dari y. Hasil akhir dari perhitungan pangkat tersebut kemudian akan ditampilkan di layar.
 
+### Kesimpulan
+Fungsi rekursif dapat memanggil dirinya sendiri secara langsung atau tidak langsung. Syarat fungsi rekursif adalah memiliki base-case, yaitu kondisi di mana proses rekursif berhenti. Membuat fungsi rekursif tanpa mengetahui base-casenya adalah tidak mungkin.
 
 ### Referensi
 [1] Donovan, A., Kernighan, B. (2015). The Go Programming Language. United Kingdom: Pearson Education.
-[2] Bellshade, Rekursif (2021), https://www.australianhumanitiesreview.org/archive/Issue-June-1997/dessaix.html
+[2] Bellshade, Rekursif (2021), https://pkg.go.dev/github.com/bellshade/Golang/basic/16_rekursif?tab=licenses
+[3] MODUL 6 Rekursif
