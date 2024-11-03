@@ -1,4 +1,4 @@
-![Screenshot 2024-11-03 212659](https://github.com/user-attachments/assets/0849bef2-f6eb-4152-80b0-14608c4c0d70)<h2 align="center">LAPORAN PAKTIKUM ALGORITMA DAN PEMROGRAMAN 2</h2>
+<h2 align="center">LAPORAN PAKTIKUM ALGORITMA DAN PEMROGRAMAN 2</h2>
 <h2 align="center">MODUL 6</h2>
 <h2 align="center">REKURSIF</h2>
 
