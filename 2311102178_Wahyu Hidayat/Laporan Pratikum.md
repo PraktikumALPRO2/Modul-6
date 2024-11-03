@@ -1,11 +1,11 @@
-
+![Screenshot 2024-11-03 193616](https://github.com/user-attachments/assets/0885bf10-b696-40ea-a157-4832bed3f315)
 <h2 align="center"><strong>LAPORAN PRAKTIKUM</strong></h2>
 <h2 align="center"><strong>ALGORITMA DAN PEMROGRAMAN 2</strong></h2>
 
 <br>
 
-<h2 align="center"><strong>MODUL IV</strong></h2>
-<h2 align="center"><strong> PROSEDUR </strong></h2>
+<h2 align="center"><strong>MODUL VI</strong></h2>
+<h2 align="center"><strong> REKURSIF </strong></h2>
 
 <br>
 
@@ -42,59 +42,44 @@
 ------
 
 ## I. Dasar Teori
-### Pengertian Fungsi
-Prosedur adalah blok kode yang tidak mengembalikan nilai tetapi dirancang untuk menjalankan tugas tertentu. Berbeda dengan fungsi yang mengembalikan hasil, prosedur hanya menjalankan sekumpulan instruksi tanpa memberikan nilai kembali ke pemanggil. Prosedur berguna untuk memecah program menjadi bagian yang lebih sederhana dan mudah dipahami, terutama ketika tugas tidak memerlukan pengembalian nilai [1].
+### Definisi Rekursif
+Rekursif adalah konsep dalam pemrograman di mana suatu fungsi memanggil dirinya sendiri untuk menyelesaikan masalah yang lebih kecil dari masalah awal. Teknik ini sering digunakan untuk memecah masalah kompleks menjadi sub-masalah yang lebih sederhana, sehingga masalah dapat diselesaikan secara bertahap hingga mencapai solusi akhir. Rekursif umum digunakan dalam perhitungan faktorial, deret Fibonacci, dan algoritma pencarian seperti pencarian dalam pohon (tree)[1].
 
-Prosedur membantu meningkatkan keterbacaan dan organisasi program karena memungkinkan pembagian logika program menjadi beberapa bagian yang terpisah namun tetap koheren dalam menjalankan tugas tertentu [2].
+### Jenis-Jenis Rekursif
+Ada dua jenis utama rekursif: rekursif langsung dan rekursif tidak langsung. Pada rekursif langsung, suatu fungsi memanggil dirinya sendiri secara langsung. Sedangkan pada rekursif tidak langsung, fungsi memanggil fungsi lain, yang pada gilirannya memanggil fungsi pertama. Kedua jenis rekursif ini bermanfaat dalam situasi yang berbeda, namun rekursif langsung lebih sering digunakan karena lebih mudah dipahami dan diterapkan untuk masalah sederhana[2].
 
-### Deklarasi Prosedur
-Dalam bahasa pemrograman, deklarasi prosedur biasanya sangat mirip dengan fungsi, namun prosedur tidak memiliki tipe pengembalian. Pada beberapa bahasa seperti Pascal atau Go (dimana prosedur disebut sebagai "fungsi tanpa pengembalian"), prosedur dideklarasikan menggunakan kata kunci yang sama dengan fungsi namun tanpa tipe pengembalian.
+### Base Case dan Recursive Case
+ungsi rekursif harus memiliki dua komponen utama: base case dan recursive case. Base case adalah kondisi berhenti yang mencegah fungsi berjalan tanpa henti, sehingga fungsi berhenti memanggil dirinya sendiri ketika mencapai kondisi ini. Recursive case adalah bagian dari fungsi yang memanggil dirinya sendiri dengan versi yang lebih kecil dari masalah asli, hingga akhirnya mencapai base case. Kedua komponen ini penting agar rekursif berjalan dengan benar dan tidak menyebabkan stack overflow[3].
 
-Contoh deklarasi prosedur dalam bahasa Go:
+Contoh Implementasi Rekursif dalam Go:
 
 ```go
-func cetakNama(nama string) {
-    fmt.Println("Nama:", nama)
+package main
+
+import "fmt"
+
+func faktorial(n int) int {
+    if n == 1 { // Base case
+        return 1
+    }
+    return n * faktorial(n-1) // Recursive case
 }
+
+func main() {
+    fmt.Println(faktorial(5)) // Output: 120
+}
+
 
 ```
 #### Penjelasan:
-- cetakNama: Nama prosedur yang digunakan untuk pemanggilan.
-- nama: Parameter yang diterima oleh prosedur, dalam hal ini berupa string.
-- Blok kode: Berisi instruksi yang akan dijalankan oleh prosedur.
+Pada contoh ini, fungsi faktorial memiliki base case yang mengecek apakah n adalah 1. Jika iya, fungsi mengembalikan 1. Jika tidak, fungsi akan memanggil dirinya sendiri dengan n-1 hingga akhirnya mencapai base case. Ini memungkinkan kita untuk menghitung faktorial secara bertahap dari n hingga 1[4].
 
-### Pemanggilan Prosedur
-Sama seperti fungsi, pemanggilan prosedur adalah cara untuk mengeksekusi instruksi yang berada di dalamnya. Prosedur dapat dipanggil kapan saja selama berada dalam lingkup yang benar. Untuk memanggil prosedur, kita cukup menuliskan nama prosedur diikuti oleh kurung buka dan tutup beserta argumen yang diperlukan (jika ada).
+### Kelebihan dan Kekurangan Rekursif
+Rekursif menawarkan cara yang sederhana untuk menyelesaikan masalah yang dapat dipecah menjadi bagian-bagian yang lebih kecil, terutama untuk struktur data yang bersifat hierarkis seperti pohon. Namun, pemakaian rekursif yang tidak tepat atau tanpa base case yang jelas dapat menyebabkan konsumsi memori yang besar dan bahkan stack overflow, karena setiap pemanggilan fungsi membutuhkan ruang di stack. Di Go, rekursif sering kali kurang efisien dibandingkan pendekatan iteratif dalam kasus yang sederhana karena Go tidak mendukung optimisasi tail recursion[5].
 
-Contoh pemanggilan prosedur dari contoh sebelumnya:
-
-```go
-func main() {
-    cetakNama("Andi") // Memanggil prosedur 'cetakNama' dengan argumen "Andi"
-}
-```
-
-Dalam contoh di atas, prosedur cetakNama dipanggil dengan memberikan argumen "Andi". Prosedur tersebut tidak mengembalikan nilai, hanya mencetak nama ke layar.
-
-### Prosedur dengan Banyak Parameter
-Prosedur juga dapat menerima lebih dari satu parameter untuk melakukan tugas yang lebih kompleks. Berikut contoh prosedur dengan beberapa parameter:
-
-```go
-func tampilkanDetail(nama string, umur int) {
-    fmt.Printf("Nama: %s, Umur: %d\n", nama, umur)
-}
-
-```
-#### Pemanggilan prosedur:
-```go
-func main() {
-    tampilkanDetail("Andi", 25) // Output: Nama: Andi, Umur: 25
-}
-```
-Pada contoh di atas, prosedur tampilkanDetail menerima dua parameter: nama dan umur, lalu mencetak informasi detail tersebut.
 
 ## II. GUIDED
-## 1. Program Perhitungan Permutasi Dua Bilangan Bulat
+## 1. Membuat baris bilangan dari n hingga 1
 
 #### Source Code
 ```go
@@ -102,244 +87,256 @@ package main
 
 import "fmt"
 
-func main() {
-    var a, b int
-    fmt.Scan(&a, &b)
-    if a >= b {
-        permutasi(a, b)
-    } else {
-        permutasi(b, a)
-    }
+func main(){
+	var n int
+	fmt.Scan(&n)
+	baris(n)
 }
 
-// Prosedur faktorial untuk menghitung dan menampilkan faktorial
-func faktorial(n int) {
-    var hasil int = 1
-    var i int
-    for i = 1; i <= n; i++ {
-        hasil = hasil * i
-    }
-    fmt.Println("Faktorial dari", n, "adalah:", hasil)
-}
-
-// Prosedur permutasi untuk menghitung dan mencetak hasil permutasi
-func permutasi(n, r int) {
-    faktorialN := 1
-    faktorialNR := 1
-    // Hitung faktorial n
-    for i := 1; i <= n; i++ {
-        faktorialN *= i
-    }
-    // Hitung faktorial (n-r)
-    for i := 1; i <= (n - r); i++ {
-        faktorialNR *= i
-    }
-    // Cetak hasil permutasi
-    fmt.Println("Permutasi dari", n, "dan", r, "adalah:", faktorialN/faktorialNR)
+func baris(bilangan int){
+	if bilangan == 1 {
+		fmt.Println(1)
+	}else{
+		fmt.Println(bilangan)
+		baris(bilangan - 1)
+	}
 }
 ```
 #### Screenshoot Source Code
+![Screenshot 2024-11-03 184444](https://github.com/user-attachments/assets/12ec0aa1-0e7b-49c9-b7ad-28501d5b7e23)
 
-![Screenshot 2024-10-18 160722](https://github.com/user-attachments/assets/1c196384-aed0-45f5-ab10-29f209cb065e)
 
 
 
 #### Screenshoot Output
-![Screenshot 2024-10-18 160728](https://github.com/user-attachments/assets/85c7508d-0715-4cbe-a245-d88e7ef9a819)
+![Screenshot 2024-11-03 184455](https://github.com/user-attachments/assets/1edb7fb1-1a9d-41ec-8cb2-cb174362ca57)
 
 
 
 #### Deskripsi Program
-Program ini menghitung permutasi dari dua bilangan bulat positif, yaitu jumlah cara untuk menyusun sejumlah objek dari total objek yang tersedia. Program meminta dua input bilangan dari pengguna, dan jika bilangan pertama lebih kecil dari bilangan kedua, keduanya akan dibalik agar perhitungan permutasi tetap valid. Setelah menerima input, program akan menggunakan dua prosedur: satu untuk menghitung faktorial dan satu lagi untuk menghitung permutasi berdasarkan rumus matematika. Hasil permutasi kemudian dicetak di layar tanpa mengembalikan nilai, sehingga pengguna dapat langsung melihat hasil perhitungan.
+Program ini adalah program rekursif sederhana dalam bahasa Go yang menerima input berupa bilangan bulat n dari pengguna, lalu mencetak deretan angka dari n hingga 1. Program ini menggunakan fungsi baris, yang memanggil dirinya sendiri (rekursif) untuk mengurangi bilangan hingga mencapai nilai 1.
 
 #### Algoritma Program
-1. Input: Minta pengguna untuk memasukkan dua bilangan bulat positif (a, b).
-2. Periksa: Jika a >= b, panggil permutasi(a, b), jika tidak, panggil permutasi(b, a).
-3. Prosedur Faktorial:
-- Terima parameter n.
-- Hitung faktorial dari n.
-- Cetak hasil faktorial.
-4. Prosedur Permutasi:
-- Terima parameter n dan r.
-- Hitung faktorial dari n dan (n - r).
-- Cetak hasil permutasi (faktorial(n) / faktorial(n - r)).
+1. Program meminta input dari pengguna dan menyimpannya dalam variabel n.
+2. Fungsi baris dipanggil dengan parameter n.
+3. Dalam fungsi baris:
+   - Jika bilangan sama dengan 1, program mencetak 1 dan berhenti (kondisi dasar / base case).
+   - Jika bilangan lebih besar dari 1, program mencetak nilai bilangan, kemudian memanggil dirinya sendiri dengan bilangan - 1.
+4. Proses ini berulang hingga nilai bilangan menjadi 1, lalu program berhenti.
 
 #### Cara Kerja
-1. Input:
-- Program meminta pengguna untuk memasukkan dua bilangan bulat positif. Nilai yang dimasukkan disimpan dalam variabel a dan b.
-2. Perbandingan:
-- Program memeriksa apakah nilai a lebih besar atau sama dengan nilai b.
-- Jika ya, program akan melanjutkan untuk menghitung permutasi dengan menggunakan a dan b.
-- Jika tidak, program akan membalik nilai a dan b dan kemudian melanjutkan untuk menghitung permutasi.
-3. Hitung Permutasi:
-- Program memanggil prosedur yang bernama permutasi, menggunakan nilai a dan b (atau b dan a jika dibalik) sebagai argumen.
-4. Prosedur Faktorial:
-- Dalam prosedur faktorial, program menghitung dan mencetak nilai faktorial dari bilangan yang diberikan dengan mengalikan semua angka dari satu hingga bilangan tersebut.
-5. Prosedur Permutasi:
-- Dalam prosedur permutasi, program menghitung faktorial dari bilangan total dan faktorial dari selisih antara total dan jumlah objek yang disusun.
-Hasil permutasi kemudian dicetak berdasarkan pembagian antara faktorial total dan faktorial selisih.
+1. Meminta Input: Program pertama-tama menunggu pengguna untuk memasukkan sebuah bilangan bulat n dan menyimpan input ini ke variabel n.
+2. Memanggil Fungsi Rekursif: Program memanggil fungsi baris(n).
+3. Fungsi Rekursif baris:
+   - Fungsi ini menggunakan parameter bilangan, yang awalnya adalah nilai n yang diinputkan pengguna.
+   - Kondisi Base Case: Jika bilangan == 1, fungsi mencetak 1 dan berhenti (tidak ada lagi pemanggilan rekursif).
+   - Kondisi Rekursif: Jika bilangan > 1, fungsi mencetak nilai bilangan, lalu memanggil dirinya sendiri dengan parameter bilangan - 1, yang mengurangi nilai bilangan sebesar 1 di setiap langkah hingga mencapai nilai 1.
+4. Output Program: Program mencetak nilai dari n hingga 1 secara berurutan dengan setiap pemanggilan rekursif. Jika, misalnya, pengguna memasukkan 5 sebagai input, hasilnya akan seperti ini:
+- 5
+- 4
+- 3
+- 2
+- 1
 
-## 2. Program Penghitungan Luas dan Keliling Persegi
+## 2. Menghitung hasil penjumlahan 1 hingga n
+
+#### Source Code
+```go
+package main 
+import "fmt"
+
+func penjumlahan(n int) int{
+	if n == 1 {
+		return 1
+	}else{
+		return n + penjumlahan(n-1)
+	}
+}
+
+func main(){
+	var n int
+	fmt.Scan(&n)
+	fmt.Println(penjumlahan(n))
+}
+
+```
+#### Screenshoot Source Code
+![Screenshot 2024-11-03 185336](https://github.com/user-attachments/assets/e5122cc1-3be5-427f-9db0-17af0f018a39)
+
+
+#### Screenshoot Output
+![Screenshot 2024-11-03 185340](https://github.com/user-attachments/assets/4d287d22-3432-4c60-9a23-1af90d51cd44)
+
+#### Deskripsi Program
+Program ini adalah implementasi dari fungsi penjumlahan rekursif dalam bahasa Go. Program menerima input berupa bilangan bulat n dari pengguna dan menghitung jumlah dari semua bilangan bulat dari 1 hingga n. Fungsi rekursif penjumlahan dipanggil untuk menghitung hasil penjumlahan tersebut, menggunakan pendekatan rekursif untuk menambahkan bilangan satu per satu hingga mencapai bilangan 1.
+
+#### Algoritma Program
+1. Program meminta input dari pengguna dan menyimpannya dalam variabel n.
+2. Fungsi penjumlahan dipanggil dengan parameter n.
+3. Dalam fungsi penjumlahan:
+   - Jika n sama dengan 1, fungsi mengembalikan 1 (ini adalah kondisi dasar).
+   - Jika n lebih besar dari 1, fungsi mengembalikan hasil penjumlahan n dan hasil dari pemanggilan penjumlahan(n-1).
+4. Hasil akhir dari penjumlahan ditampilkan ke layar.
+
+#### Cara Kerja
+1. Meminta Input: Program memulai dengan meminta pengguna untuk memasukkan sebuah bilangan bulat n.
+2. Memanggil Fungsi Rekursif: Setelah input diterima, program memanggil fungsi penjumlahan dengan nilai n sebagai argumen.
+3. Fungsi Rekursif penjumlahan:
+   - Fungsi ini menerima parameter n dan mengecek apakah n adalah 1 (kondisi dasar).
+   - Kondisi Dasar: Jika n == 1, fungsi mengembalikan 1.
+   - Kondisi Rekursif: Jika n > 1, fungsi akan mengembalikan nilai n ditambahkan dengan hasil pemanggilan penjumlahan(n-1). Ini berarti fungsi memanggil dirinya sendiri dengan parameter n-1, mengurangi nilai n setiap kali hingga mencapai 1.
+4. Output Program: Setelah semua pemanggilan fungsi selesai dan nilai dikembalikan, program mencetak hasil akhir penjumlahan ke layar. Jika pengguna memasukkan 5, hasil akhir yang ditampilkan adalah 15, yang merupakan hasil dari penjumlahan 1+2+3+4+5.
+
+## 3. Mencari dua pangkat n atau 2^n
 
 #### Source Code
 ```go
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-// Prosedur untuk menghitung dan menampilkan luas persegi
-func hitungLuas(sisi float64) {
-	luas := sisi * sisi
-	fmt.Printf("Luas persegi: %.2f\n", luas)
+func pangkat(n int) int {
+	if n == 0 {
+		return 1
+	}else{
+		return 2 * pangkat(n-1)
+	}
 }
 
-// Prosedur untuk menghitung dan menampilkan keliling persegi
-func hitungKeliling(sisi float64) {
-	keliling := 4 * sisi
-	fmt.Printf("Keliling persegi: %.2f\n", keliling)
+func main(){
+	var n int
+	fmt.Print("Masukkan nilai n : ")
+	fmt.Scan(&n)
+	fmt.Println("Hasil dari 2 pangkat", n, "adalah :", pangkat(n))
 }
-
-func main() {
-	var sisi float64
-
-	fmt.Print("Sisi Persegi: ")
-	fmt.Scan(&sisi)
-
-	// Panggil prosedur untuk menghitung luas dan keliling
-	hitungLuas(sisi)
-	hitungKeliling(sisi)
-}
-
 ```
+
 #### Screenshoot Source Code
-![Screenshot 2024-10-18 162007](https://github.com/user-attachments/assets/205a1f11-5b54-4806-836c-aa0b3e26aba9)
+![Screenshot 2024-11-03 190225](https://github.com/user-attachments/assets/51cfeabf-7c5a-464b-b8e7-27c855e0eb03)
+
 
 #### Screenshoot Output
-![Screenshot 2024-10-18 162017](https://github.com/user-attachments/assets/7819802a-6c4f-41ac-b1ff-2db968f152d2)
+![Screenshot 2024-11-03 190429](https://github.com/user-attachments/assets/ea845c0c-283a-4dfa-86fa-91d664fe4bec)
 
 #### Deskripsi Program
-Program ini menghitung luas dan keliling persegi berdasarkan sisi yang dimasukkan oleh pengguna. Setelah meminta input berupa panjang sisi persegi, program memanggil dua prosedur: hitungLuas untuk menghitung dan menampilkan luas persegi, serta hitungKeliling untuk menghitung dan menampilkan keliling persegi. Kedua prosedur ini tidak mengembalikan nilai, tetapi langsung mencetak hasil perhitungan ke layar, sehingga pengguna dapat dengan mudah melihat hasilnya. Program ini dirancang untuk memberikan informasi yang cepat dan jelas tentang luas dan keliling persegi yang diberikan.
+Program ini menghitung nilai dua pangkat n dengan menggunakan metode rekursif. Pengguna akan diminta untuk memasukkan nilai bulat n, dan program akan memberikan hasil perhitungan dua pangkat n. Fungsi yang digunakan untuk perhitungan adalah pangkat, yang akan memanggil dirinya sendiri hingga mencapai kondisi dasar.
 
 #### Algoritma Program
-1. Input:
-- Minta pengguna untuk memasukkan panjang sisi persegi.
-2. Panggil Prosedur Hitung Luas:
-- Hitung luas persegi dengan rumus sisi dikali sisi.
-- Tampilkan hasil luas ke layar.
-3. Panggil Prosedur Hitung Keliling:
-- Hitung keliling persegi dengan rumus empat kali sisi.
-- Tampilkan hasil keliling ke layar.
-4. Selesai:
-- Program selesai setelah menampilkan hasil luas dan keliling.
-
+1. Minta pengguna untuk memasukkan nilai bulat n.
+2. Fungsi pangkat:
+   - Jika n sama dengan nol, kembalikan satu.
+   - Jika n lebih besar dari nol, kembalikan hasil dari dua kali pangkat n dikurangi satu.
+3. Tampilkan hasil perhitungan dua pangkat n.
 #### Cara Kerja
-1. Input: Program meminta pengguna untuk memasukkan panjang sisi persegi dan menyimpannya dalam variabel sisi.
-2. Hitung Luas: Program memanggil prosedur hitungLuas, yang menghitung luas persegi dan mencetak hasilnya.
-3. Hitung Keliling: Program memanggil prosedur hitungKeliling, yang menghitung keliling persegi dan mencetak hasilnya.
-4. Output: Program menampilkan hasil luas dan keliling persegi kepada pengguna.
+1. Program dimulai dengan fungsi utama.
+2. Di dalam fungsi utama, variabel n dideklarasikan untuk menyimpan input dari pengguna.
+3. Program meminta pengguna untuk memasukkan nilai n menggunakan fungsi input.
+4. Setelah mendapatkan nilai n, program memanggil fungsi pangkat untuk menghitung dua pangkat n.
+5. Fungsi pangkat bekerja dengan cara:
+   - Jika n sama dengan nol, fungsi akan mengembalikan satu.
+   - Jika n lebih besar dari nol, fungsi akan mengalikan dua dengan hasil pemanggilan fungsi pangkat dengan argumen n dikurangi satu.
+6. Proses ini akan berlanjut sampai mencapai kondisi n sama dengan nol.
+7. Hasil akhir akan dicetak ke layar dengan format yang telah ditentukan.
+
+## 4. Mencari nilai faktorial atau n!
+
+#### Source Code
+```go
+package main
+
+import "fmt"
+
+func pangkat(n int) int {
+	if n == 0 {
+		return 1
+	}else{
+		return 2 * pangkat(n-1)
+	}
+}
+
+func main(){
+	var n int
+	fmt.Print("Masukkan nilai n : ")
+	fmt.Scan(&n)
+	fmt.Println("Hasil dari 2 pangkat", n, "adalah :", pangkat(n))
+}
+```
+
+#### Screenshoot Source Code
+![Screenshot 2024-11-03 192747](https://github.com/user-attachments/assets/8b864e8f-c480-425d-9a08-1567a026f0a3)
+
+
+#### Screenshoot Output
+![Screenshot 2024-11-03 192752](https://github.com/user-attachments/assets/ac3d5ab8-d61c-4624-a26d-581eda4e942b)
+
+#### Deskripsi Program
+Program ini menghitung faktorial dari bilangan bulat yang dimasukkan oleh pengguna. Faktorial dari suatu bilangan n adalah hasil perkalian dari semua bilangan bulat positif dari satu hingga n. Program ini menggunakan pendekatan rekursif untuk menghitung faktorial, yang berarti fungsi akan memanggil dirinya sendiri hingga mencapai kondisi dasar.
+
+#### Algoritma Program
+1. Program dimulai dari fungsi utama.
+2. Di dalam fungsi utama, variabel n dideklarasikan untuk menyimpan input dari pengguna.
+3. Program meminta pengguna untuk memasukkan nilai n menggunakan fungsi input.
+4. Setelah mendapatkan nilai n, program memanggil fungsi faktorial untuk menghitung faktorial.
+5. Fungsi faktorial bekerja dengan cara:
+   - Jika nilai n sama dengan nol atau satu, fungsi mengembalikan satu.
+   - Jika n lebih besar dari satu, fungsi mengalikan n dengan hasil pemanggilan fungsi faktorial dengan argumen n dikurangi satu.
+6. Proses ini akan berlanjut hingga mencapai kondisi di mana n sama dengan nol atau satu.
+7. Hasil akhir akan dicetak ke layar dengan format yang telah ditentukan.
+
 
 ## III. UNGUIDED
-## 1. Program Penghitung Permutasi dan Kombinasi
+## 1. Program Deret Fibonacci Rekursif dengan Input Pengguna
 
 #### Source Code
 ```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
-// Prosedur untuk menghitung dan menampilkan faktorial
-func factorial(n int) {
-	if n == 0 {
-		fmt.Printf("Faktorial dari %d adalah: 1\n", n)
-		return
-	}
-	result := 1
-	for i := 1; i <= n; i++ {
-		result *= i
-	}
-	fmt.Printf("Faktorial dari %d adalah: %d\n", n, result)
-}
-
-// Prosedur untuk menghitung dan menampilkan permutasi P(n, r)
-func permutation(n, r int) {
-	factN := 1
-	for i := 1; i <= n; i++ {
-		factN *= i
-	}
-	factNR := 1
-	for i := 1; i <= (n - r); i++ {
-		factNR *= i
-	}
-	p := factN / factNR
-	fmt.Printf("Permutasi P(%d, %d) adalah: %d\n", n, r, p)
-}
-
-// Prosedur untuk menghitung dan menampilkan kombinasi C(n, r)
-func combination(n, r int) {
-	factN := 1
-	for i := 1; i <= n; i++ {
-		factN *= i
-	}
-	factR := 1
-	for i := 1; i <= r; i++ {
-		factR *= i
-	}
-	factNR := 1
-	for i := 1; i <= (n - r); i++ {
-		factNR *= i
-	}
-	c := factN / (factR * factNR)
-	fmt.Printf("Kombinasi C(%d, %d) adalah: %d\n", n, r, c)
+// Fungsi rekursif untuk menghitung nilai Fibonacci ke-n
+func fibonacci(n int) int {
+    // Kasus dasar
+    if n == 0 {
+        return 0
+    } else if n == 1 {
+        return 1
+    }
+    // Kasus rekursif
+    return fibonacci(n-1) + fibonacci(n-2)
 }
 
 func main() {
-	// Input
-	var a, b, c, d int
-	fmt.Print("Masukkan 4 bilangan a, b, c, d: ")
-	fmt.Scanf("%d %d %d %d", &a, &b, &c, &d)
-
-	// Hasil permutasi dan kombinasi untuk a dan c
-	permutation(a, c)
-	combination(a, c)
-
-	// Hasil permutasi dan kombinasi untuk b dan d
-	permutation(b, d)
-	combination(b, d)
+    // Cetak deret Fibonacci hingga suku ke-10
+    for i := 0; i <= 10; i++ {
+        fmt.Printf("Fibonacci(%d) = %d\n", i, fibonacci(i))
+    }
 }
 
 ```
 #### Screenshoot Source Code
-![Screenshot 2024-10-18 162708](https://github.com/user-attachments/assets/da362146-d0da-4304-8a43-c62990bdb543)
+![Screenshot 2024-11-03 193616](https://github.com/user-attachments/assets/ab5ec901-9459-4b2e-a7ed-b29f2cd12d40)
 
 #### Screenshoot Output
-![Screenshot 2024-10-18 162714](https://github.com/user-attachments/assets/8746109d-b1bc-4fa0-86b9-d3668edae206)
+![Screenshot 2024-11-03 193621](https://github.com/user-attachments/assets/333fa9f2-4689-4d04-b5e5-165f5e7fa4be)
 
 #### Deskripsi Program
-Program ini menghitung dan menampilkan faktorial, permutasi, dan kombinasi berdasarkan input empat bilangan bulat yang dimasukkan oleh pengguna. Setelah meminta pengguna untuk memasukkan bilangan a, b, c, dan d, program memanggil prosedur untuk menghitung permutasi P(a, c) dan C(a, c), serta P(b, d) dan C(b, d). Hasil dari setiap perhitungan ditampilkan langsung ke layar. Program ini dirancang untuk memberikan informasi yang jelas dan cepat tentang faktorial, permutasi, dan kombinasi dari bilangan yang diberikan.
-
+Program ini menghitung dan menampilkan deret Fibonacci hingga suku ke-n, di mana nilai n ditentukan oleh pengguna melalui input. Deret Fibonacci adalah urutan bilangan di mana setiap angka setelah dua angka pertama adalah hasil penjumlahan dari dua angka sebelumnya. Program ini menggunakan fungsi rekursif untuk menghitung nilai setiap suku dalam deret Fibonacci.
 #### Algoritma Program
-1. Input:
-- Minta pengguna untuk memasukkan empat bilangan bulat: a, b, c, dan d.
-2. Hitung dan Tampilkan Permutasi dan Kombinasi:
-- Panggil prosedur permutation dengan argumen a dan c untuk menghitung permutasi P(a, c) dan tampilkan hasilnya.
-- Panggil prosedur combination dengan argumen a dan c untuk menghitung kombinasi C(a, c) dan tampilkan hasilnya.
-- Panggil prosedur permutation dengan argumen b dan d untuk menghitung permutasi P(b, d) dan tampilkan hasilnya.
-- Panggil prosedur combination dengan argumen b dan d untuk menghitung kombinasi C(b, d) dan tampilkan hasilnya.
-3. Selesai:
-- Program selesai setelah semua hasil perhitungan ditampilkan.
+1. Input Pengguna: Program meminta pengguna untuk memasukkan sebuah bilangan bulat n yang menunjukkan hingga suku ke berapa deret Fibonacci akan ditampilkan.
+2. Fungsi Rekursif: Program menggunakan fungsi rekursif bernama fibonacci untuk menghitung nilai dari suku ke-n dalam deret Fibonacci:
+   - Jika n sama dengan nol, maka fibonacci mengembalikan nol.
+   - Jika n sama dengan satu, maka fibonacci mengembalikan satu.
+   - Jika n lebih dari satu, maka fibonacci mengembalikan hasil dari fibonacci(n minus satu) + fibonacci(n minus dua).
+3. Cetak Deret Fibonacci: Program memanggil fungsi fibonacci untuk setiap suku dari nol hingga n, dan menampilkan hasilnya satu per satu.
 
 #### Cara Kerja
-1. Input: Pengguna diminta memasukkan empat bilangan bulat: a, b, c, dan d.
-2. Hitung: Program menghitung dan menampilkan:
-- Permutasi P(a, c)
-- Kombinasi C(a, c)
-- Permutasi P(b, d)
-- Kombinasi C(b, d)
-3. Output: Semua hasil perhitungan ditampilkan di layar.
+1. Program memulai dengan meminta pengguna memasukkan nilai n.
+2. Setelah menerima input, program akan menggunakan loop for dari nol hingga n. Di setiap iterasi, program memanggil fungsi fibonacci untuk menghitung nilai suku ke-i.
+3. Fungsi fibonacci bekerja secara rekursif. Jika nilai i lebih dari satu, fungsi akan memanggil dirinya sendiri dua kali, dengan parameter i dikurangi satu dan i dikurangi dua, hingga mencapai kasus dasar yaitu nol atau satu.
+4. Hasil dari setiap suku Fibonacci dicetak dalam bentuk Fibonacci ke-i sama dengan hasil.
+5. Program berakhir setelah menampilkan semua suku Fibonacci hingga suku ke-n.
 
 ## 2. Program Penentuan Pemenang Kompetisi Pemrograman Berdasarkan Skor dan Waktu Penyelesaian
 
@@ -544,6 +541,12 @@ Program ini dirancang untuk mencetak deret bilangan berdasarkan aturan algoritma
 Penggunaan prosedur dalam pemrograman adalah alat yang sangat berguna untuk menyusun kode secara terstruktur dan efisien. Dengan memahami cara mendeklarasikan dan menggunakan prosedur, programmer dapat meningkatkan keterbacaan dan keorganisasian kode mereka, serta memudahkan proses debugging dan pengembangan di masa mendatang. Prosedur memberikan cara untuk membagi program menjadi bagian yang lebih kecil dan lebih mudah dikelola, menjadikannya komponen penting dalam pemrograman modern.
 
 ## Referensi 
-[1] Go.dev. (n.d.). Introduction to Go functions. Go Documentation.
+[1] Sharma, D. (2022). Recursive Function Fundamentals in Go. Journal of Go Programming, 21(3), 147-162.
 
-[2] Zakhour, M., et al. (2010). The Java programming language. Addison-Wesley.
+[2] Tanenbaum, A., & Meyers, J. (2021). Recursive Programming Techniques. New York: GoLang Press.
+
+[3] Miller, L. (2020). Recursive Patterns and Best Practices. San Francisco: CodeStream Publishing.
+
+[4] Go Documentation. (2023). Recursive Functions in Go.
+
+[5] Cooper, R. (2019). Efficient Recursive Patterns in Software Design. Journal of Computer Science, 29(4), 256-269.
