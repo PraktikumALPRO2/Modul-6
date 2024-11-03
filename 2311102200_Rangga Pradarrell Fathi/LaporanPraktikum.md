@@ -339,6 +339,7 @@ func main() {
 
 ### Deskripsi Program
 
+
 ## Unguided - 2
 ### Study Case
 **Buatlah sebuah program yang digunakan untuk menampilkan pola bintang berikut ini dengan menggunakan fungsi rekursif. N adalah masukan dari user.**
@@ -375,6 +376,7 @@ func main() {
 
 
 ### Deskripsi Program
+
 
 ## Unguided - 3
 ### Study Case
@@ -416,6 +418,7 @@ func main() {
 
 ### Deskripsi Program
 
+
 ## Unguided - 4
 ### Study Case
 **Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu.**                             
@@ -455,6 +458,7 @@ func main() {
 
 
 ### Deskripsi Program
+
 
 ## Unguided - 5
 ### Study Case
@@ -500,7 +504,36 @@ func main() {
 
 #### Source Code
 ```go
+// Rangga Pradarrell Fathi
+// 2311102200
+// IF-11-05
+package main
 
+import "fmt"
+
+func pangkat(x, y int) int {
+	if y == 0 {
+		return 1
+	}
+	hasil := 0
+	for i := 0; i < y; i++ {
+		if i == 0 {
+			hasil = x
+		} else {
+			hasil += x 
+		}
+	}
+	return hasil
+}
+
+func main() {
+	var x, y int
+	fmt.Scan(&x)
+	fmt.Scanln(&y)
+
+	hasil := pangkat(x, y)
+	fmt.Printf("%d pangkat %d = %d\n", x, y, hasil)
+}
 ```
 ### Screenshot Code
 
