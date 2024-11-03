@@ -334,11 +334,16 @@ func main() {
 	fmt.Println()
 }
 ```
-### Screenshot Code
+### Screenshot output
+![Screenshot 2024-11-03 151606](https://github.com/user-attachments/assets/b97174e8-8961-4852-b73b-d89495c866ff)
 
 
 ### Deskripsi Program
+Program ini menghasilkan deret Fibonacci hingga jumlah suku ke-n yang dimasukkan pengguna.
 
+1. Fungsi FibonacciAngka menghitung nilai suku ke-n dalam deret Fibonacci secara rekursif.
+2. Fungsi main meminta input n, kemudian menggunakan loop untuk mencetak deret Fibonacci dari suku pertama hingga ke-n.
+Contoh: Jika pengguna memasukkan n = 5, program mencetak 0 1 1 2 3.
 
 ## Unguided - 2
 ### Study Case
@@ -373,10 +378,14 @@ func main() {
 }
 ```
 ### Screenshot Code
+![Screenshot 2024-11-03 151746](https://github.com/user-attachments/assets/7196b886-e329-4593-8bba-2c06ee01cf8e)
 
 
 ### Deskripsi Program
+Program ini mencetak pola segitiga bintang secara rekursif berdasarkan nilai n yang dimasukkan pengguna.
 
+1. Fungsi printBintang: Fungsi ini mencetak n baris bintang, dengan setiap baris memiliki jumlah bintang yang meningkat dari 1 hingga n. Fungsi ini dipanggil secara rekursif, mulai dari n = 1 hingga mencapai jumlah bintang sesuai nilai n.
+2. Fungsi main: Meminta input n dari pengguna dan memanggil fungsi printBintang untuk mencetak pola bintang.
 
 ## Unguided - 3
 ### Study Case
@@ -414,10 +423,14 @@ func main() {
 }
 ```
 ### Screenshot Code
+![Screenshot 2024-11-03 151842](https://github.com/user-attachments/assets/9c358852-5498-4db0-81df-c70012166e43)
 
 
 ### Deskripsi Program
+Program ini mencari dan menampilkan semua faktor dari bilangan bulat positif n yang dimasukkan oleh pengguna.
 
+1. Fungsi findFactors: Fungsi ini menggunakan rekursi untuk mencari faktor dari n, mulai dari 1 hingga n. Jika n habis dibagi i, maka i adalah faktor dari n, dan program mencetak i.
+2. Fungsi main: Meminta input n dari pengguna dan memanggil findFactors untuk menampilkan faktor-faktor dari n.
 
 ## Unguided - 4
 ### Study Case
@@ -455,10 +468,14 @@ func main() {
 }
 ```
 ### Screenshot Code
+![Screenshot 2024-11-03 151919](https://github.com/user-attachments/assets/b64f5293-30c3-4bf2-ad4f-2164e531efbc)
 
 
 ### Deskripsi Program
+Program ini mencetak urutan bilangan secara berurutan dari n ke 1, lalu kembali dari 1 ke n menggunakan rekursi.
 
+1. Fungsi printSekuensial: Jika n adalah 1, program mencetak 1. Jika tidak, program mencetak n, lalu memanggil dirinya sendiri dengan n - 1 untuk mencetak bilangan berikutnya secara berurutan, kemudian kembali mencetak n setelah rekursi selesai.
+2. Fungsi main: Meminta input n dari pengguna dan memanggil fungsi printSekuensial untuk mencetak pola.
 
 ## Unguided - 5
 ### Study Case
@@ -492,9 +509,14 @@ func main() {
 }
 ```
 ### Screenshot Code
+![Screenshot 2024-11-03 152016](https://github.com/user-attachments/assets/57d34524-189b-4327-bfae-035aad3bfc99)
 
 
 ### Deskripsi Program
+Program ini mencetak bilangan ganjil dari 1 hingga n secara berurutan menggunakan rekursi.
+
+1. Fungsi cetakBilanganGanjil: Jika n lebih besar atau sama dengan 1, fungsi ini memanggil dirinya sendiri dengan nilai n - 2 (mengurangi 2 setiap kali untuk mendapatkan bilangan ganjil sebelumnya), lalu mencetak nilai n setelah rekursi. Fungsi ini memastikan bilangan ganjil dicetak dalam urutan menaik.
+2. Fungsi main: Meminta input n dari pengguna dan memanggil cetakBilanganGanjil untuk mencetak bilangan ganjil dari 1 hingga n.
 
 ## Unguided - 6
 ### Study Case
@@ -536,6 +558,11 @@ func main() {
 }
 ```
 ### Screenshot Code
+![Screenshot 2024-11-03 212955](https://github.com/user-attachments/assets/99dd1e1d-e8a8-41b6-81fa-a2d7ac049834)
 
 
 ### Deskripsi Program
+Program ini seharusnya menghitung pangkat dari bilangan x dengan eksponen y, tetapi terdapat kesalahan dalam implementasi fungsi pangkat.
+
+1. Fungsi pangkat(x, y int) int: Fungsi ini dirancang untuk menghitung hasil x pangkat y, tetapi menggunakan penjumlahan berulang alih-alih perkalian berulang. Logika dalam fungsi ini hanya menjumlahkan x sebanyak y kali, yang sebenarnya menghasilkan x * y dan bukan x^y.
+2. Fungsi main: Meminta pengguna memasukkan nilai x dan y, kemudian memanggil fungsi pangkat untuk menghitung hasil, dan menampilkannya.
