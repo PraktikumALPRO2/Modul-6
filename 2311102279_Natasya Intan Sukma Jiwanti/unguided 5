@@ -1,0 +1,23 @@
+package main
+import "fmt"
+
+func cariganjil(a int, b int){
+	if a > b{
+		return
+	}else{
+		if a%2 == 1{
+			fmt.Print(a, " ")
+		}
+		cariganjil(a + 1, b)
+	}
+}
+
+func main(){
+	var a, b int
+	fmt.Print("Masukkan Bilangan A: ")
+	fmt.Scan(&a)
+	fmt.Print("Masukkan Bilangan B: ")
+	fmt.Scan(&b)
+	fmt.Print("Bilangan Ganjil dari ", a, " hingga ", b ," adalah: ")
+	cariganjil(a, b)
+}
