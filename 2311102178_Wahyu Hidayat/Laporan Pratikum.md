@@ -1,4 +1,3 @@
-![Screenshot 2024-11-03 193616](https://github.com/user-attachments/assets/0885bf10-b696-40ea-a157-4832bed3f315)
 <h2 align="center"><strong>LAPORAN PRAKTIKUM</strong></h2>
 <h2 align="center"><strong>ALGORITMA DAN PEMROGRAMAN 2</strong></h2>
 
