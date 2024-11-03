@@ -318,6 +318,33 @@ func main() {
 
 Program ini mencetak bilangan ganjil dari 1 hingga nilai maksimum N yang diberikan oleh pengguna, menggunakan fungsi rekursif. Fungsi cetakBilanganGanjil menerima parameter n dan akan berhenti jika n kurang dari 1 (basis rekursi), karena tidak ada bilangan ganjil yang dapat dicetak. Jika n lebih besar dari atau sama dengan 1, fungsi ini pertama-tama memanggil dirinya sendiri dengan nilai n - 2, sehingga rekursi berjalan dari nilai terkecil hingga mencapai nilai n. Setelah kembali dari setiap pemanggilan rekursif, fungsi memeriksa apakah n ganjil (n % 2 != 0). Jika ya, maka nilai n dicetak, sehingga hasil akhirnya adalah urutan bilangan ganjil dari 1 hingga N secara berurutan. Di bagian main, program meminta input N dari pengguna, lalu memanggil cetakBilanganGanjil(N) untuk mencetak semua bilangan ganjil hingga batas N.
 
+### 6. Buatlah program yang mengimplementasikan rekursif untuk mencari hasil pangkat dari dua buah bilangan.<br/>Masukan terdiri dari bilangan bulat x dan y.<br/>Keluaran terdiri dari hasil x dipangkatkan y.<br/>Catatan: diperbolehkan menggunakan asterik , tapi dilarang menggunakan import "math".
+
+```go
+package main
+
+import "fmt"
+
+func power(x, y int) int {
+	result := 1
+	for i := 0; i < y; i++ {
+		result *= x
+	}
+	return result
+}
+
+func main() {
+	fmt.Print("Masukkan 2 bilangan bulat:")
+	var x, y int
+	fmt.Scanln(&x, &y)
+
+	result := power(x, y)
+	fmt.Printf("%d pangkat %d = %d", x, y, result)
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/1ea54d6b-3658-4ed0-861a-d24e4c85e6ee)
+
+Program ini ditulis dalam bahasa Go dan berfungsi untuk menghitung pangkat dari dua bilangan bulat yang dimasukkan oleh pengguna. Pada awalnya, program meminta pengguna untuk memasukkan dua bilangan bulat, yaitu x sebagai basis dan y sebagai eksponen. Fungsi power kemudian digunakan untuk menghitung hasil x dipangkatkan dengan y. Fungsi ini melakukan perhitungan dengan menggunakan loop for yang mengalikan x sebanyak y kali. Hasil dari perhitungan ini kemudian disimpan dalam variabel result. Terakhir, program menampilkan hasil pangkat tersebut dalam format yang telah ditentukan.
 
 
 
