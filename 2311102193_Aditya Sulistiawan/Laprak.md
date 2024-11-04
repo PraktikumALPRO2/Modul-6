@@ -148,10 +148,12 @@ func main() {
 
 
 ### Deskripsi Program
+Fungsi baris melakukan cetak bilangan, kemudian memanggil dirinya sendiri dengan nilai 
+bilangan yang dikurangi satu. Proses akan terus berlanjut hingga bilangan mencapai satu, di 
+mana ia mencetak satu dan berhenti. Hasilnya yaitu deretan bilangan yang dicetak dari n hingga 
+secara menurun 1.
 
-Program diatas merupakan program untuk mencetak bilangan bulat dan nilai yang diinputkan oleh user hingga 1 secara terbalik. Program ini menggunakan fungsi rekursif untuk mencetak bilangan 1 per 1.
-
-Algoritma dari program tersebut sebagai berikut :
+### Algoritma dari program tersebut sebagai berikut :
 1. Minta inputan dari user untuk bilangan 'n'.
 2. Panggil fungsi 'baris'.
 3. fungsi 'baris', jika 'bilangan' = 1, maka cetak 1.
@@ -164,9 +166,6 @@ Cara kerja dari program ini yaitu user menginputkan bilangan. Setelah itu fungsi
 **Menghitung hasil penjumlahan 1 hingga n, Base-Case n == 1**
 #### Source Code
 ```go
-//Rangga Pradarrell Fathi
-//2311102200
-//IF-11-05
 package main
 
 import "fmt"
@@ -191,11 +190,16 @@ func main() {
 }
 ```
 ### Screenshot Output
-![Guided 2](https://github.com/user-attachments/assets/321c6b05-275a-494a-8298-2936347cd4d1)
+![ou](https://github.com/user-attachments/assets/7588e0d4-593d-4659-aec0-9d815889e69a)
+
+### Source code
+![carbon](https://github.com/user-attachments/assets/41462763-ca2e-49ad-a4cb-170e4e2c5511)
 
 
 ### Deskripsi Program
-Program diatas merupakan program  untuk menghitung jumlah bilangan hingga nilai yang diinputkan oleh user. Program menggunakan fungsi rekursif untuk menjumlahkan bilangan.
+Program tersebut membaca bilangan n yang diinput pengguna dan akan mencetak hasil 
+penjumlahan dari n hingga 1 menggunakan fungsi rekursif penjumlahan. Fungsi itu akan 
+menambahkan n dengan hasil pemanggilan rekursif pada n-1 hingga mencapai 1. 
 
 Algoritma dari program tersebut sebagai berikut :
 1. Buat fungsi 'penjumlahan' untuk melakukan kondisi.
