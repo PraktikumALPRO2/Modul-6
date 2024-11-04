@@ -55,27 +55,30 @@ Aditya Sulistiawan
 ## <strong> Dasar Teori </strong>
 
 <strong><h2>Definisi Rekursif</h2></strong>
-Rekursif merupakan konsep pemrograman di mana sebuah fungsi memanggil dirinya sendiri untuk menyelesaikan suatu masalah. Fungsi rekursif akan terus memanggil dirinya sendiri hingga mencapai suatu kondisi dasar (base case) yang memungkinkan fungsi tersebut berhenti dan mengembalikan nilai.
+Dilansir dari Geeks for Geeks fungsi rekursif adalah proses di mana suatu fungsi memanggil dirinya sendiri secara langsung atau tidak langsung. Dengan menggunakan algoritma rekursif, masalah tertentu dapat diselesaikan dengan cukup mudah. Fungsi rekursif juga diartikan sebagai fungsi yang memanggil dirinya sendiri secara berulang dalam proses pengolahan data atau pemanggilan fungsi. Pada beberapa kasus fungsi rekursif bisa lebih mudah dipahami dan sederhana daripada dengan solusi iteratif.
 
 ### <strong> Beberapa karakteristik utama dari rekursif:
 
-- Base Case: Setiap fungsi rekursif harus memiliki kondisi dasar atau base case yang menghentikan rekursi. Jika tidak ada base case, rekursi akan terus berlanjut tanpa batas.
-- Pengurangan Masalah: Setiap pemanggilan rekursif harus mengurangi masalah menjadi sub-masalah yang lebih kecil dan mendekati base case.
-- Pemanggilan Diri Sendiri: Fungsi rekursif memanggil dirinya sendiri dengan argumen yang berbeda untuk menyelesaikan sub-masalah.
-- Kemampuan Memecah Masalah: Rekursif sangat efektif untuk memecah masalah yang kompleks menjadi sub-masalah yang lebih sederhana dan dapat diselesaikan secara terpisah.
-
+- harus ada statement kondisional biar aktivitas rekursi-nya berhenti,
+- kalau nggak ada kondisional untuk terminate, bakal ada infinite recursion, jadinya system crash,
+- makan banyak kekuatan prosesor dan memori karena pemanggilan fungsi bakal ditumpuk sampai manggil fungsi yang terakhir,
+- kode lebih simpel (dibanding iteratif).
+- 
 ### <strong> Contoh penerapan rekursif dalam pemrograman antara lain:
 - Menghitung Faktorial: Fungsi rekursif untuk menghitung faktorial suatu bilangan.
    **Faktorial**:
    ```go
-   func factorial(n int) int {
-       if n == 0 {
-           return 1
-       }
-       return n * factorial(n-1)
-   }
+  package main
+import (
+ "fmt"
+)
+func getFactorial(n int) int {
+ return n
+}
+func main() {
+ val := getFactorial(5)
+}
    ```
-   Fungsi `factorial()` memanggil dirinya sendiri dengan nilai `n-1` sampai `n` mencapai 0, lalu mengembalikan hasil perkalian dari `n` sampai 1.
   
 - Deret Fibonacci: Fungsi rekursif untuk menghitung suku ke-n dari deret Fibonacci.
    **Deret Fibonacci**:
