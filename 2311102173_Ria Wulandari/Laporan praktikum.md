@@ -270,21 +270,140 @@ Deret fibonacci adalah sebuah deret dengan nilai suku ke-0 dan ke-1 adalah 0 dan
 ![image](https://github.com/user-attachments/assets/4263acff-dfcb-46bd-b7dc-a80c25e7bbb2)
 #### Source code :
 ```go
+package main
+
+import (
+	"fmt"
+)
+
+// Fungsi rekursif untuk menghitung nilai Fibonacci ke-n
+func fibonacci(n int) int {
+	if n <= 1 {
+		return n
+	}
+	return fibonacci(n-1) + fibonacci(n-2)
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan jumlah suku Fibonacci: ")
+	fmt.Scanln(&n)
+
+	// Menampilkan baris pertama untuk nilai n
+	fmt.Print("n  ")
+	for i := 0; i <= n; i++ {
+		fmt.Printf("%d\t", i)
+	}
+	fmt.Println()
+
+	// Menampilkan baris kedua untuk nilai S_n
+	fmt.Print("S_n ")
+	for i := 0; i <= n; i++ {
+		fmt.Printf("%d\t", fibonacci(i))
+	}
+	fmt.Println()
+}
 
 ```
+#### Output
+![image](https://github.com/user-attachments/assets/e97022c0-bbbb-464e-8b7a-6e3cabccd302)
 #### Deskripsi program
-#### Algoritma program :
-#### Cara kerja program :
+Program ini dibuat untuk menghitung deret Fibonacci hingga nilai ke-n yang dimasukkan oleh pengguna. Program menampilkan dua baris:
 
+1. Baris pertama menampilkan indeks dari 0 hingga n.
+
+2. Baris kedua menampilkan nilai Fibonacci yang sesuai dengan setiap indeks tersebut.
+
+Fungsi rekursif `fibonacci` digunakan untuk menghitung nilai Fibonacci pada setiap indeks.
+#### Algoritma program :
+1. Input: Pengguna diminta memasukkan sebuah bilangan bulat `n` yang akan menentukan jumlah suku Fibonacci yang ingin dihitung.
+
+2. Proses:
+- Program memiliki fungsi `fibonacci(n)` yang menghitung nilai Fibonacci ke-n secara rekursif.
+
+- Jika nilai `n` adalah 0 atau 1, fungsi akan langsung mengembalikan nilai tersebut sebagai hasil.
+
+- Jika nilai `n` lebih besar dari 1, fungsi akan memanggil dirinya sendiri dengan nilai `n-1` dan `n-2`, kemudian menjumlahkan hasilnya.
+
+3. Output: Program mencetak dua baris:
+
+- Baris pertama berisi indeks dari 0 hingga n.
+
+- Baris kedua berisi nilai Fibonacci yang sesuai dengan indeks masing-masing.
+#### Cara kerja program :
+1. Program meminta pengguna untuk memasukkan sebuah angka `n` (misalnya 5).
+
+2. Program mencetak baris pertama yang berisi indeks dari 0 sampai 5.
+
+3. Program kemudian memanggil fungsi `fibonacci` untuk setiap indeks dari 0 sampai 5 untuk menghitung nilai Fibonacci.
+
+4. Hasil perhitungan Fibonacci ditampilkan di baris kedua, sesuai dengan indeksnya.
+
+5. Program selesai setelah menampilkan hasil dalam bentuk tabel.
 ### 2. Buatlah sebuah program yang digunakan untuk menampilkan pola bintang dengan menggunakan fungsi rekursif. N adalah masukan dari user
 #### Source code :
 ```go
+package main
+
+import (
+	"fmt"
+)
+
+// Fungsi rekursif untuk menampilkan sejumlah bintang pada satu baris
+func tampilkanBintang(jumlahBintang int) {
+	// Jika jumlah bintang mencapai 0, hentikan rekursi
+	if jumlahBintang == 0 {
+		return
+	}
+	// Panggil rekursi untuk menurunkan jumlah bintang
+	tampilkanBintang(jumlahBintang - 1)
+	// Cetak satu bintang
+	fmt.Print("*")
+}
+
+// Fungsi rekursif untuk mencetak pola bintang dari baris pertama hingga baris terakhir
+func cetakPolaBintang(totalBaris int, barisSaatIni int) {
+	// Jika baris saat ini melewati total baris, hentikan rekursi
+	if barisSaatIni > totalBaris {
+		return
+	}
+	// Tampilkan bintang sesuai dengan nomor baris saat ini
+	tampilkanBintang(barisSaatIni)
+	// Pindah ke baris baru
+	fmt.Println()
+	// Panggil fungsi ini lagi untuk baris berikutnya
+	cetakPolaBintang(totalBaris, barisSaatIni+1)
+}
+
+func main() {
+	var jumlahBaris int
+	fmt.Print("Masukkan jumlah baris (N): ")
+	fmt.Scan(&jumlahBaris)
+
+	fmt.Println("Pola bintang:")
+	cetakPolaBintang(jumlahBaris, 1)
+}
 
 ```
-#### Deskripsi program
-#### Algoritma program :
-#### Cara kerja program :
+#### Output
+![image](https://github.com/user-attachments/assets/cdb42ae8-19a8-41f2-bbb3-e0ca0753224d)
 
+#### Deskripsi program
+Program ini adalah aplikasi sederhana untuk mencetak pola segitiga bintang menggunakan fungsi rekursif dalam bahasa Go. Program meminta pengguna memasukkan jumlah baris yang diinginkan, dan kemudian menampilkan pola segitiga yang dimulai dari satu bintang pada baris pertama dan bertambah satu bintang pada setiap baris berikutnya hingga mencapai jumlah baris yang diinputkan.
+#### Algoritma program :
+1. Input: Program meminta jumlah baris dari pengguna.
+
+2. Cetak Pola dengan Rekursi:
+
+- Fungsi `cetakPolaBintang` mencetak bintang di tiap baris dan memanggil dirinya sendiri untuk baris berikutnya.
+
+- Fungsi `tampilkanBintang` mencetak bintang dalam jumlah sesuai nomor baris, menggunakan rekursi hingga selesai.
+#### Cara kerja program :
+1. Pengguna memasukkan jumlah baris.
+
+2. Program memulai cetak dari baris pertama dan berlanjut hingga mencapai baris terakhir yang diminta.
+
+3. Setiap baris menampilkan jumlah bintang sesuai nomor baris, hingga terbentuk segitiga.
 ### 3. Buatlah program yang mengimplementasikan rekursif untuk menampilkan faktor bilangan dari suatu N, atau bilangan yang apa saja yang habis membagi N.
 Masukan terdiri dari sebuah bilangan bulat positif N.
 
@@ -293,12 +412,56 @@ Keluaran terdiri dari barisan bilangan yang menjadi faktor dari N.
 ![image](https://github.com/user-attachments/assets/6f75059e-002d-4b32-9900-589175b9f579)
 #### Source code :
 ```go
+package main
+
+import "fmt"
+
+// Fungsi rekursif untuk mencari faktor dari suatu bilangan
+func tampilkanFaktor(bilangan, indeks int) {
+	if indeks > bilangan {
+		return
+	}
+	if bilangan%indeks == 0 {
+		fmt.Print(indeks, " ")
+	}
+	tampilkanFaktor(bilangan, indeks+1)
+}
+
+func main() {
+	var angka int
+	fmt.Print("Masukkan bilangan: ")
+	fmt.Scan(&angka)
+	fmt.Print("Faktor dari ", angka, ": ")
+	tampilkanFaktor(angka, 1)
+	fmt.Println()
+}
 
 ```
-#### Deskripsi program
-#### Algoritma program :
-#### Cara kerja program :
+#### Output
+![image](https://github.com/user-attachments/assets/0322aa4a-4a32-4819-b9f1-47ed9cb7d224)
 
+#### Deskripsi program
+Program ini dibuat untuk menampilkan faktor-faktor dari sebuah bilangan bulat positif yang dimasukkan oleh pengguna. Faktor-faktor ini adalah bilangan-bilangan yang dapat membagi bilangan input secara tepat (sisa pembagian sama dengan nol).
+#### Algoritma program :
+1. Input Bilangan: Pengguna memasukkan sebuah bilangan bulat positif.
+
+2. Menampilkan Faktor: Program menggunakan fungsi rekursif `tampilkanFaktor` untuk menemukan dan mencetak setiap faktor dari bilangan tersebut, mulai dari angka 1 hingga bilangan itu sendiri.
+
+3. Pencetakan Hasil: Program mencetak semua faktor bilangan secara terurut dan kemudian menyelesaikan eksekusinya.
+#### Cara kerja program :
+1. Program dimulai dengan meminta pengguna untuk memasukkan sebuah bilangan, yang disimpan dalam variabel `angka`.
+
+2. Fungsi `tampilkanFaktor` dipanggil dengan `angka` dan dimulai dari `indeks` = 1.
+
+3. Di dalam `tampilkanFaktor`:
+
+- Jika `indeks` lebih besar dari `bilangan`, fungsi berhenti (`return`).
+
+- Jika `indeks` adalah faktor dari `bilangan` (yaitu `bilangan % indeks == 0`), maka nilai `indeks` dicetak sebagai faktor.
+
+- Fungsi ini kemudian memanggil dirinya sendiri dengan menambah nilai `indeks` sebesar 1, sehingga proses rekursif mencari faktor berikutnya.
+
+4. Proses ini berlanjut hingga seluruh faktor dari `bilangan` ditemukan dan dicetak.
 ### 4. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu
 Masukan terdiri dari sebuah bilangan positif N
 
@@ -306,12 +469,63 @@ Keluaran terdiri dari barisan bilangan dari N hingga 1 dan kembali ke N
 ![image](https://github.com/user-attachments/assets/a088d67a-43d7-4002-8aa1-3ec9d0bf7763)
 #### Source code :
 ```go
+package main
+
+import "fmt"
+
+// Fungsi rekursif untuk menampilkan deret bilangan dari M ke 1 dan kembali ke M
+func tampilkanDeret(bilangan, saatIni int) {
+	// Kondisi dasar rekursi
+	if saatIni == 1 {
+		fmt.Print(saatIni, " ")
+		return
+	}
+
+	// Tampilkan nilai saat ini dan panggil fungsi secara rekursif ke bawah
+	fmt.Print(saatIni, " ")
+	tampilkanDeret(bilangan, saatIni-1)
+
+	// Tampilkan nilai saat kembali dari rekursi
+	fmt.Print(saatIni, " ")
+}
+
+func main() {
+	var angka int
+	fmt.Print("Masukkan bilangan: ")
+	fmt.Scan(&angka)
+	fmt.Print("Hasil: ")
+	tampilkanDeret(angka, angka)
+	fmt.Println()
+}
 
 ```
-#### Deskripsi program
-#### Algoritma program :
-#### Cara kerja program :
+#### Output
+![image](https://github.com/user-attachments/assets/c64cfe40-3bda-4acb-b250-367c1c7fe2de)
 
+#### Deskripsi program
+Program ini bertujuan untuk menampilkan deret bilangan dari `N` hingga `1`, kemudian kembali lagi dari `1` ke `N`. Pengguna memasukkan bilangan `N`, dan program mencetak pola deret tersebut menggunakan fungsi rekursif.
+#### Algoritma program :
+1. Input Bilangan: Pengguna memasukkan sebuah bilangan` N`.
+
+2. Pencetakan Pola Rekursif:
+
+- Fungsi `tampilkanDeret` dipanggil dengan `N` sebagai parameter awal.
+
+- Fungsi ini mencetak angka dari `N` ke `1` dan kembali lagi ke `N` melalui proses rekursi.
+
+3. Basis Rekursi: Jika nilai `saatIni` sama dengan `1`, fungsi mencetak `1` dan menghentikan pemanggilan rekursif lebih lanjut.
+
+4. Rekursi Balik Naik: Setelah mencapai `1`, fungsi kembali ke setiap pemanggilan sebelumnya dan mencetak angka pada tiap langkah.
+#### Cara kerja program :
+1. Program meminta pengguna memasukkan bilangan `N`.
+
+2. Fungsi `tampilkanDeret` dipanggil, dimulai dengan `N`.
+
+3. Fungsi mencetak nilai saat ini (`saatIni`) dan memanggil dirinya sendiri dengan `saatIni - 1`, sampai nilai saatIni menjadi `1`.
+
+4. Saat saatIni mencapai `1`, angka `1` dicetak, dan fungsi berhenti memanggil dirinya sendiri lebih jauh.
+
+5. Program kembali mencetak setiap nilai `saatIni` yang tersimpan dari rekursi sebelumnya, membentuk deret yang naik dari `1` kembali ke `N`.
 ### 5. Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.
 Masukan terdiri dari sebuah bilangan bulat positif N.
 
@@ -319,12 +533,67 @@ Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.
 ![image](https://github.com/user-attachments/assets/c47df5f9-c85e-4bed-94cc-8645ac695dcb)
 #### Source code :
 ```go
+package main
+
+import "fmt"
+
+// Fungsi rekursif untuk menampilkan bilangan ganjil dari 1 hingga batas tertentu
+func tampilkanGanjil(batas, angkaSaatIni int) {
+	if angkaSaatIni > batas {
+		return
+	}
+	if angkaSaatIni%2 != 0 {
+		fmt.Print(angkaSaatIni, " ")
+	}
+	tampilkanGanjil(batas, angkaSaatIni+1)
+}
+
+func main() {
+	var angka int
+	fmt.Print("Masukkan bilangan: ")
+	fmt.Scan(&angka)
+	tampilkanGanjil(angka, 1)
+	fmt.Println()
+}
 
 ```
-#### Deskripsi program
-#### Algoritma program :
-#### Cara kerja program :
+#### Output 
+![image](https://github.com/user-attachments/assets/c382cd11-9405-4279-b473-c96145c458fa)
 
+#### Deskripsi program
+Program ini ditulis dalam bahasa pemrograman Go (Golang) dan berfungsi untuk mencetak semua bilangan ganjil dari 1 hingga angka yang dimasukkan oleh pengguna. Program ini menggunakan pendekatan rekursif untuk menampilkan deret bilangan ganjil.
+#### Algoritma program :
+1. Deklarasi Fungsi: Buat fungsi rekursif `tampilkanGanjil(batas, angkaSaatIni)` untuk menampilkan bilangan ganjil.
+
+- Input: `batas` (angka maksimum) dan `angkaSaatIni` (angka yang sedang diproses).
+
+- Basis Rekursi: Jika `angkaSaatIni` lebih besar dari `batas`, hentikan rekursi.
+
+- Cek Bilangan Ganjil: Jika `angkaSaatIni` adalah bilangan ganjil (modulus 2 tidak sama dengan 0), cetak `angkaSaatIni`.
+
+- Panggil Rekursi: Panggil `tampilkanGanjil` dengan `angkaSaatIni` yang ditingkatkan 1.
+
+2. Fungsi `main`:
+
+- Minta pengguna untuk memasukkan angka dan simpan dalam variabel `angka`.
+
+- Panggil fungsi `tampilkanGanjil` dengan `angka` sebagai batas dan 1 sebagai angka saat ini.
+
+- Cetak baris baru setelah semua bilangan ganjil ditampilkan.
+#### Cara kerja program :
+1. Program dimulai dari fungsi `main`.
+
+2. Pengguna diminta untuk memasukkan sebuah bilangan yang akan menjadi batas untuk bilangan ganjil.
+
+3. Fungsi `tampilkanGanjil` dipanggil dengan `angka` sebagai batas dan 1 sebagai angka awal.
+
+4. Fungsi ini memeriksa apakah `angkaSaatIni` lebih besar dari `batas`. Jika ya, proses berhenti.
+
+5. Jika `angkaSaatIni` adalah bilangan ganjil, maka angka tersebut akan dicetak.
+
+6. Fungsi kemudian memanggil dirinya sendiri dengan `angkaSaatIni` yang bertambah 1.
+
+7. Proses berulang hingga semua bilangan ganjil dari 1 hingga batas ditampilkan.
 ### 6. Buatlah program yang mengimplementasikan rekursif untuk mencari hasil pangkat dari dua buah bilangan.
 Masukan terdiri dari bilangan bulat x dan y.
 
@@ -333,8 +602,65 @@ Keluaran terdiri dari hasil x dipangkatkan y.
 Catatan: diperbolehkan menggunakan asterik "*", tapi dilarang menggunakan Import "math".
 #### Source code :
 ```go
+package main
+
+import "fmt"
+
+// Fungsi rekursif untuk menghitung nilai a pangkat b
+func hitungPangkat(a, b int) int {
+	if b == 0 {
+		return 1
+	}
+	return a * hitungPangkat(a, b-1)
+}
+
+func main() {
+	var dasar, pangkat int
+	fmt.Print("Masukkan dasar (a): ")
+	fmt.Scan(&dasar)
+	fmt.Print("Masukkan pangkat (b): ")
+	fmt.Scan(&pangkat)
+	hasil := hitungPangkat(dasar, pangkat)
+	fmt.Printf("%d pangkat %d = %d\n", dasar, pangkat, hasil)
+}
 
 ```
+#### Output
+![image](https://github.com/user-attachments/assets/74931e7b-6fc5-4c21-8ae8-edd0e91dea9c)
+
 #### Deskripsi program
+Program ini ditulis dalam bahasa pemrograman Go (Golang) dan bertujuan untuk menghitung nilai pangkat dari suatu bilangan. Pengguna akan diminta untuk memasukkan dua angka: yang pertama adalah bilangan dasar (a) yang ingin dipangkatkan, dan yang kedua adalah pangkat (b) yang menunjukkan seberapa banyak bilangan dasar tersebut akan dikalikan dengan dirinya sendiri. Penghitungan pangkat dilakukan dengan metode rekursif, yaitu teknik di mana fungsi memanggil dirinya sendiri untuk menyelesaikan masalah yang lebih kecil hingga mencapai kondisi dasar yang menghentikan rekursi.
 #### Algoritma program :
+1. Mulai.
+
+2. Deklarasi fungsi `hitungPangkat(a, b int)` int:
+
+- Jika `b` sama dengan 0, kembalikan 1 (kondisi dasar).
+
+- Jika tidak, kembalikan `a` dikali hasil dari `hitungPangkat(a, b-1)`.
+
+3. Dalam fungsi `main()`:
+
+- Deklarasi dua variabel `dasar` dan `pangkat`.
+
+- Minta pengguna memasukkan nilai untuk `dasar` dan `pangkat`.
+
+- Panggil fungsi `hitungPangkat(dasar, pangkat)` dan simpan hasilnya di variabel `hasil`.
+
+- Cetak hasil dalam format yang jelas.
+
+4. Selesai.
 #### Cara kerja program :
+1. Program dimulai dengan mendeklarasikan fungsi `hitungPangkat` yang menerima dua parameter: `a` (dasar) dan `b` (pangkat).
+
+2. Dalam fungsi tersebut, terdapat kondisi dasar di mana jika `b` sama dengan 0, fungsi akan mengembalikan 1. Ini mengikuti prinsip matematis bahwa setiap bilangan pangkat 0 adalah 1.
+
+3. Jika `b` lebih besar dari 0, fungsi akan mengalikan `a` dengan hasil dari panggilan rekursif `hitungPangkat(a, b-1)`. Ini berarti bahwa program akan terus memanggil dirinya sendiri dengan nilai pangkat yang berkurang satu hingga mencapai kondisi dasar.
+
+4. Dalam fungsi `main`, program meminta pengguna untuk memasukkan nilai dasar dan pangkat melalui input dari konsol.
+
+5. Setelah kedua nilai dimasukkan, fungsi `hitungPangkat` dipanggil dengan nilai yang diberikan, dan hasilnya disimpan dalam variabel `hasil`.
+
+6. Program kemudian mencetak hasil penghitungan dalam format yang menyatakan nilai pangkat yang telah dihitung, sehingga pengguna dapat dengan mudah memahami hasilnya.
+
+7. Program berakhir setelah menampilkan hasil.
